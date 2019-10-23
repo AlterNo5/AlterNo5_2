@@ -54,6 +54,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ClickSalir()
     {
+        PlayerPrefs.SetInt("Partida_1", 1);
+        Resume();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }

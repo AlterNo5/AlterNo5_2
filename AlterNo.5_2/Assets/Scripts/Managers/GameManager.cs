@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
     private GameCamara cam;
     private static GameManager m_instance;
 
+    public GameObject Character_1;
+    public GameObject Character_2;
+    public GameObject Character_3;
+    
+    
+    
     //Propiedad
     public static GameManager Instance
     {
@@ -38,6 +44,18 @@ public class GameManager : MonoBehaviour
     private void SpawnPlayer()
     {
 
+        if (PlayerPrefs.GetInt("CharacterSelected") == 0)
+        {
+            player = Character_1;
+        }
+        else if (PlayerPrefs.GetInt("CharacterSelected") == 1)
+        {
+            player = Character_2;
+        }
+        else if (PlayerPrefs.GetInt("CharacterSelected") == 2)
+        {
+            player = Character_3;
+        }
 
         cam.SetTarget((Instantiate(player, Vector3.zero, player.transform.rotation) as GameObject).transform);
     }

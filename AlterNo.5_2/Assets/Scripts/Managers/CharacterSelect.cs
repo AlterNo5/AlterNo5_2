@@ -97,6 +97,7 @@ public class CharacterSelect : MonoBehaviour
     {
         VentanaBorrar.SetActive(false);
         NumberClicks_1 = 0;
+        PlayerPrefs.SetInt("Partida_1", 0);
     }
 
     public void Nop()
@@ -109,6 +110,6 @@ public class CharacterSelect : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelected", index);
-        SceneManager.LoadScene(SceneNumber, LoadSceneMode.Single);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("Partida_1"), LoadSceneMode.Single);
     }
 }
