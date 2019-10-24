@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
     public void UpdateObjetoDefensa_Mali(int objeDefensa)
     {      
         objetoDefensaImage.sprite = objetoDefensa[objeDefensa];
-        textoCantidad_ObjDef.text = "x" + objeDefensa;
+       // textoCantidad_ObjDef.text = "x" + objeDefensa;
     }
 
 }

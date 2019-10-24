@@ -10,14 +10,14 @@ public class PlayerCollisionDetection : MonoBehaviour
     Vidas objetoRestaurador;
    
     public Transform spawnPointPersonaje_transf;
-    public Transform arma_transf;
-    public Transform player_transform;
+    public GameObject arma_transf;
+    public GameObject player_transform;
     
 
     private void Start()
     {
-        player_transform= GameObject.Find("Personaje(Clone)").GetComponent<Transform>();
-        arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
+        //player_transform= GameObject.Find("Personaje(Clone)").GetComponent<GameObject>();
+        //arma_transf = GameObject.Find("Arma").GetComponent<GameObject>();
     }
 
     //  *****************  Método OnTriggerEnter  ***********************
@@ -58,8 +58,8 @@ public class PlayerCollisionDetection : MonoBehaviour
             objetoArma.Arma();                                // manda a llamar el método Arma de la clase Crafteo
 
 
-            arma_transf.SetParent(player_transform);               // pone el arma como hijo del PLAYER
-            arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);      // coloca el arma en una posición y rotación
+            //arma_transf.SetParent(player_transform);               // pone el arma como hijo del PLAYER
+            //arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);      // coloca el arma en una posición y rotación
            
         }
 
