@@ -11,6 +11,8 @@ public class Crafteo : MonoBehaviour
     public int Num_gotasAgua = 0;
     public int arma = 0;
     public int obj_Defensa = 0;
+    public bool mali = true;
+    public bool nivel_3 = true;
     UIManager _uiManager;
    // public GameObject jabonGO;
     public SphereCollider colliderJabon;
@@ -63,7 +65,7 @@ public class Crafteo : MonoBehaviour
         Num_gotasAgua = Num_gotasAgua + 1;
         _uiManager.UpdateGotasAgua(Num_gotasAgua);      // suma las gotas y las manda a la clase uiManager
 
-        if (Num_gotasAgua > 4)
+        if (Num_gotasAgua > 5)
         {
             colliderGota.enabled = false;              // desactiva el colaider por si encuentra más de 4 gotas
         }
@@ -83,58 +85,65 @@ public class Crafteo : MonoBehaviour
     public int Fabricar_objeto_defensa(int crafJabon, int crafGotas)
     {
         Num_jabones = crafJabon;
-        Num_gotasAgua = crafGotas;                              
-                                                                //  recibe objetos y devuelve el objeto creado
-        int total = Num_gotasAgua + Num_jabones;
-
-        for (int i = 0; i < total; i++)
+        Num_gotasAgua = crafGotas;
+        if (nivel_3 == false)
         {
-            if (Num_jabones == 1 & Num_gotasAgua == 1)    // 1 jabon , 1 gota
-            {              
+            if (mali == true)    // 1 jabon , 1 gota
+            {
+                if (Num_jabones == 1 & Num_gotasAgua == 1)
+                {
+                    Num_jabones = 0;
+                    Num_gotasAgua = 0;
+
+                    objeto_creado = 1;
+
+
+                    _uiManager.UpdateJabon(Num_jabones);
+                    _uiManager.UpdateGotasAgua(Num_gotasAgua);
+                }
+                else if (Num_jabones == 1 & Num_gotasAgua == 2) // 1 jabon, 3 gotas
+                {
+                    Num_jabones = 0;
+                    Num_gotasAgua = 1;
+
+                    objeto_creado = 1;
+
+
+                    _uiManager.UpdateJabon(Num_jabones);
+                    _uiManager.UpdateGotasAgua(Num_gotasAgua);
+                }
+            }
+
+
+            else if (mali == false & Num_jabones == 1 & Num_gotasAgua == 2)
+            {
                 Num_jabones = 0;
                 Num_gotasAgua = 0;
 
                 objeto_creado = 1;
-                sumaObjetos = sumaObjetos + objeto_creado;
-             
+
+
                 _uiManager.UpdateJabon(Num_jabones);
                 _uiManager.UpdateGotasAgua(Num_gotasAgua);
+
             }
-            else if (Num_jabones == 1 & Num_gotasAgua == 3) // 1 jabon, 3 gotas
+        }
+        else if(nivel_3 == true)
+        {
+            _uiManager.jabonImage.enabled = false;
+            _uiManager.textoCantidad_Jabon.enabled = false;
+            Debug.Log("nivel 3");
+            if(Num_jabones ==0 & Num_gotasAgua == 3)
             {
                 Num_jabones = 0;
-                Num_gotasAgua = 2;
-
-                objeto_creado = 1;
-                sumaObjetos = sumaObjetos + objeto_creado;
-              
-                _uiManager.UpdateJabon(Num_jabones);
-                _uiManager.UpdateGotasAgua(Num_gotasAgua);
-            }
-            else if(Num_jabones == 1 & Num_gotasAgua == 2) // 1 jabon, 2 gotas
-            {                           
-                Num_jabones = 0;
-                Num_gotasAgua = 1;
-
-                objeto_creado = 1;
-                sumaObjetos = sumaObjetos + objeto_creado;
-
-                _uiManager.UpdateJabon(Num_jabones);
-                _uiManager.UpdateGotasAgua(Num_gotasAgua);
-            }
-            else if (Num_jabones == 2 & Num_gotasAgua == 1 ) // 2 jabones, gotas
-            {
-                Num_jabones = 1;
                 Num_gotasAgua = 0;
 
                 objeto_creado = 1;
-                sumaObjetos = sumaObjetos + objeto_creado;
-              
+
                 _uiManager.UpdateJabon(Num_jabones);
                 _uiManager.UpdateGotasAgua(Num_gotasAgua);
+               
             }
-
-            objeto_creado = sumaObjetos;          
         }
         return objeto_creado;
     }
