@@ -12,7 +12,7 @@ public class Crafteo : MonoBehaviour
     public int arma = 0;
     public int obj_Defensa = 0;
     public bool mali = true;
-    public bool nivel_3 = true;
+   // public bool nivel_3 = true;
     UIManager _uiManager;
    // public GameObject jabonGO;
     public SphereCollider colliderJabon;
@@ -86,8 +86,11 @@ public class Crafteo : MonoBehaviour
     {
         Num_jabones = crafJabon;
         Num_gotasAgua = crafGotas;
-        if (nivel_3 == false)
+        if (_uiManager.nivel == 1 || _uiManager.nivel == 5)
         {
+            _uiManager.jabonImage.enabled = true;
+            _uiManager.textoCantidad_Jabon.enabled = true;
+
             if (mali == true)    // 1 jabon , 1 gota
             {
                 if (Num_jabones == 1 & Num_gotasAgua == 1)
@@ -128,7 +131,7 @@ public class Crafteo : MonoBehaviour
 
             }
         }
-        else if(nivel_3 == true)
+        else if(_uiManager.nivel == 3)
         {
             _uiManager.jabonImage.enabled = false;
             _uiManager.textoCantidad_Jabon.enabled = false;

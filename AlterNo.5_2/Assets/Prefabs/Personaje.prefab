@@ -44,8 +44,6 @@ GameObject:
   - component: {fileID: 7588048458722857440}
   - component: {fileID: 1187533054540219694}
   - component: {fileID: 8460082990256569691}
-  - component: {fileID: 6382503882769878176}
-  - component: {fileID: 2858866401659814475}
   - component: {fileID: -7160935382573503008}
   m_Layer: 0
   m_Name: Personaje
@@ -152,31 +150,6 @@ MonoBehaviour:
   spawnPointPersonaje_transf: {fileID: 5316022432248931229}
   arma_transf: {fileID: 0}
   player_transform: {fileID: 0}
---- !u!114 &6382503882769878176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609121102994904572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74c12488a271e540baf9db655047bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidas: 4
---- !u!114 &2858866401659814475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609121102994904572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b767194ef7e64c54d868e58eea819625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-7160935382573503008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +168,8 @@ MonoBehaviour:
   Num_gotasAgua: 0
   arma: 0
   obj_Defensa: 0
+  mali: 0
+  nivel_3: 0
   colliderJabon: {fileID: 0}
   colliderGota: {fileID: 0}
 --- !u!1001 &6162137366954919309

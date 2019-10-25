@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class EnemyCollisionDetection : MonoBehaviour
 {
-    Vidas vida;
-    
-    
+    HealthManager healthManager;
+
+    private void Start()
+    {
+         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
+        
+    }
+
     //  *************  Método LoadSceneDelay  *****************
     public void LoadSceneDelay()
     {
@@ -17,23 +22,20 @@ public class EnemyCollisionDetection : MonoBehaviour
     //  **************  Método OnTriggerEnter  ******************
     public void OnTriggerEnter(Collider other)
     {       
-        if (other.tag == "Enemy")                // si el PLAYER colisiona con el enemigo
+        if (other.tag == "Player")                
         {
-            vida = GetComponent<Vidas>();
+            healthManager.ReduceHealth();
+            
+                                      
+            Destroy(this.gameObject);               // se destruye el enemigo
 
-            vida.Vida();                             // se manda a llamar el método Vida de la clase Vidas
-            Destroy(other.gameObject);               // se destruye el enemigo
-          
-            if(vida.vidas == 0)                     // cuando pierde todas las vidas se invoca a la escena de inicio
-            {
-                Invoke("LoadSceneDelay", 1.5f);
-            }          
+            healthManager.Muerte();     
         }
 
-        if(other.tag == "Bullet")                    
-        {
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
-        }
+        //if(other.tag == "Bullet")                    
+        //{
+        //    Destroy(other.gameObject);
+        //    Destroy(this.gameObject);
+        //}
     }
 }

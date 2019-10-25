@@ -8,10 +8,7 @@ public class UIManager : MonoBehaviour
 
    
   
-    public Sprite [] vidas_n_1;
-    public Sprite[] vidas_n_2;
-    public Sprite[] vidas_n_3;
-    public Sprite[] vidas_n_5;
+    
 
     public Sprite[] jabones;
     public Sprite[] gotasDeAgua;
@@ -19,7 +16,7 @@ public class UIManager : MonoBehaviour
     public Sprite [] armas;
     public Sprite [] objetoDefensa;
 
-    public Image vidasImagen;
+   
     public Image jabonImage;
     public Image gotaAguaImage;
     public Image armaImage;
@@ -29,14 +26,15 @@ public class UIManager : MonoBehaviour
     public Text textoCantidad_Gotas;
     public Text textoCantidad_ObjDef;
 
-    // los siguientes métodos actualizan la imagen en la UI siguiente en los arrays correspondientes a cada método
+    public int nivel;
 
-    //  *************  Método UpdateLives  *********************
-    public void UpdateLives (int vidasActuales)
-    { 
-        vidasImagen.sprite = vidas_n_1[vidasActuales];       
+  
+    private void Start()
+    {
+     
     }
 
+   
     //  *************  Método UpdateJabon  *********************
     public void UpdateJabon(int jabonActual)
     {        
