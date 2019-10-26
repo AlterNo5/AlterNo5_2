@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
-   
-  
     
-
     public Sprite[] jabones;
     public Sprite[] gotasDeAgua;
 
@@ -25,43 +21,80 @@ public class UIManager : MonoBehaviour
     public Text textoCantidad_Jabon;
     public Text textoCantidad_Gotas;
     public Text textoCantidad_ObjDef;
+    public Text textoCantidad_arma;
 
     public int nivel;
 
-  
+
     private void Start()
     {
-     
+       // armaImage.sprite = armas[1];
     }
 
-   
     //  *************  Método UpdateJabon  *********************
     public void UpdateJabon(int jabonActual)
-    {        
-        jabonImage.sprite = jabones[jabonActual];
+    {
+      
+        if (jabonActual >= 2)
+        {
+            jabonImage.sprite = jabones[1];
+
+        }
+        else
+        {
+            jabonImage.sprite = jabones[jabonActual];
+        }
+       
         textoCantidad_Jabon.text = "x " + jabonActual;
        
     }
 
     //  *************  Método UpdateGotasAgua  *********************
     public void UpdateGotasAgua(int gotasActuales)
-    {     
-        gotaAguaImage.sprite = gotasDeAgua[gotasActuales];
+    {
+     
+        if (gotasActuales >= 2)
+        {
+            gotaAguaImage.sprite = gotasDeAgua[1];
+
+        }
+        else
+        {
+            gotaAguaImage.sprite = gotasDeAgua[gotasActuales];
+        }
+       
         textoCantidad_Gotas.text = "x " + gotasActuales;
+       
        
     }
 
     //  *************  Método UpdateArma  *********************
     public void UpdateArma(int arma)
     {
-        armaImage.sprite = armas[arma];
+        if(arma >=1)
+        {
+            armaImage.sprite = armas[1];
+        }
+        else
+        {
+            armaImage.sprite = armas[arma];
+        }
     }
 
     //  *************  Método UpdateObjetoDefensa *********************
     public void UpdateObjetoDefensa_Mali(int objeDefensa)
     {      
-        objetoDefensaImage.sprite = objetoDefensa[objeDefensa];
-       // textoCantidad_ObjDef.text = "x" + objeDefensa;
+        if(objeDefensa >=1)
+        {
+            objetoDefensaImage.sprite = objetoDefensa[1];
+        }
+        else
+        {
+            objetoDefensaImage.sprite = objetoDefensa[objeDefensa];
+        }
+       
+        textoCantidad_ObjDef.text = "x" + objeDefensa;
     }
 
+    
 }

@@ -90,19 +90,33 @@ public class HealthManager : MonoBehaviour
         }
 
     }
-    //  falta arreglar, se sale del array
+   
     public void RestaurarVida()
     {
         vidaActual = vidaActual + 2;
         switch (nivel)
         {
             case 1:
-
-                vidasImagen.sprite = vidas_n_1[vidaActual];
+                if(vidaActual >= 4)
+                {
+                    vidasImagen.sprite = vidas_n_1[4];
+                }
+                else
+                {
+                    vidasImagen.sprite = vidas_n_1[vidaActual];
+                }
+               
                 break;
             case 2:
-
-                vidasImagen.sprite = vidas_n_2[vidaActual];
+                if(vidaActual >= 6)
+                {
+                    vidasImagen.sprite = vidas_n_2[6];
+                }
+                else
+                {
+                    vidasImagen.sprite = vidas_n_2[vidaActual];
+                }
+              
                 break;
             case 3:
 
@@ -117,25 +131,22 @@ public class HealthManager : MonoBehaviour
         }
 
     }
-    
 
-    
+    public void Muerte()
+    {
+        if (vidaActual == 0)
+        {
+            Invoke("LoadSceneDelay", 1.5f);
+        }
+
+    }
+
 
     public void LoadSceneDelay()
     {
         SceneManager.LoadScene(0, LoadSceneMode.Single);           // llama a la escena de inicio
     }
 
-    public void Muerte()
-    {
-        if(vidaActual == 0)
-        {
-            Invoke("LoadSceneDelay", 1.5f);
-        }
-       
-
-        
-
-    }
+   
 
 }

@@ -28,6 +28,7 @@ public class InputGun : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && withgun == true)
         {
             m_gun.Shoot();
+
         }
     }
 
