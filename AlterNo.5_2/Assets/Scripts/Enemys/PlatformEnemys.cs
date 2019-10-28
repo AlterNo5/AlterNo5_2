@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyCollisionDetection : MonoBehaviour
+public class PlatformEnemys : MonoBehaviour
 {
     HealthManager healthManager;
 
     private void Start()
     {
-         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
-        
+        healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
+
     }
 
     //  *************  Método LoadSceneDelay  *****************
@@ -21,18 +21,14 @@ public class EnemyCollisionDetection : MonoBehaviour
 
     //  **************  Método OnTriggerEnter  ******************
     public void OnTriggerEnter(Collider other)
-    {       
-        if (other.tag == "Player")                
+    {
+        if (other.tag == "Player")
         {
             healthManager.ReduceHealth();
-            healthManager.UpdateLives();
-            
-                                      
-            Destroy(this.gameObject);              
-
-            healthManager.Muerte();     
+            healthManager.UpdateLives();  
+            healthManager.Muerte();
         }
 
-        
+
     }
 }

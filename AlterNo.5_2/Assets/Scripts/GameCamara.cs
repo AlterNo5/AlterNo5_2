@@ -17,7 +17,7 @@ public class GameCamara : MonoBehaviour
         if (target != null)
         {
             float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
-            float y = IncrementTowards(transform.position.y, target.position.y, trackSpeed);
+            float y = IncrementTowards(transform.position.y, target.position.y +2 , trackSpeed);
             transform.position = new Vector3(x, y, transform.position.z);
         }
     }

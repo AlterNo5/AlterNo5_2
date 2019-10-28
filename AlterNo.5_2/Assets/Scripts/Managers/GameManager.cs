@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     private GameCamara cam;
     private static GameManager m_instance;
+    private LevelManager m_levelManager;
 
     public GameObject Character_1;
     public GameObject Character_2;
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private LevelManager m_levelManager;
+   
 
 
     void Start()

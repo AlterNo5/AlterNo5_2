@@ -6,66 +6,68 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     
-    public Sprite[] jabones;
-    public Sprite[] gotasDeAgua;
+    public Sprite[] matB;
+    public Sprite[] matA;
 
     public Sprite [] armas;
     public Sprite [] objetoDefensa;
 
    
-    public Image jabonImage;
-    public Image gotaAguaImage;
+    public Image matB_Image;
+    public Image matA_Image;
     public Image armaImage;
     public Image objetoDefensaImage;
 
-    public Text textoCantidad_Jabon;
-    public Text textoCantidad_Gotas;
+    public Text textoCantidad_MatB;
+    public Text textoCantidad_MatA;
     public Text textoCantidad_ObjDef;
     public Text textoCantidad_arma;
 
     public int nivel;
+    Canvas uIManager;
 
 
     private void Start()
     {
-       // armaImage.sprite = armas[1];
+      if(nivel == 4)
+        {
+
+            uIManager = GameObject.Find("Canvas").GetComponent<Canvas>();
+            uIManager.enabled = false;
+        }
     }
 
-    //  *************  Método UpdateJabon  *********************
-    public void UpdateJabon(int jabonActual)
+    //  *************  Método UpdateMatB  *********************
+    public void UpdateMatB(int currentMatB)
     {
       
-        if (jabonActual >= 2)
+        if (currentMatB >= 2)
         {
-            jabonImage.sprite = jabones[1];
+            matB_Image.sprite = matB[1];
 
         }
         else
         {
-            jabonImage.sprite = jabones[jabonActual];
+            matB_Image.sprite = matB[currentMatB];
         }
        
-        textoCantidad_Jabon.text = "x " + jabonActual;
+        textoCantidad_MatB.text = "x " + currentMatB;
        
     }
 
-    //  *************  Método UpdateGotasAgua  *********************
-    public void UpdateGotasAgua(int gotasActuales)
-    {
-     
-        if (gotasActuales >= 2)
+    //  *************  Método UpdateMatA  *********************
+    public void UpdateMatA(int currentMatA)
+    {    
+        if (currentMatA >= 2)
         {
-            gotaAguaImage.sprite = gotasDeAgua[1];
-
+            matA_Image.sprite = matA[1];
         }
         else
         {
-            gotaAguaImage.sprite = gotasDeAgua[gotasActuales];
+            matA_Image.sprite = matA[currentMatA];
         }
        
-        textoCantidad_Gotas.text = "x " + gotasActuales;
-       
-       
+        textoCantidad_MatA.text = "x " + currentMatA;      
     }
 
     //  *************  Método UpdateArma  *********************
@@ -95,6 +97,8 @@ public class UIManager : MonoBehaviour
        
         textoCantidad_ObjDef.text = "x" + objeDefensa;
     }
+
+    
 
     
 }

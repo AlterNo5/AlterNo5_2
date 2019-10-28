@@ -6,12 +6,27 @@ public class Gun : MonoBehaviour
 {
     public GameObject m_prefabBullet;
     public Transform m_spawnPoint;
-    public float timeToDestroy = 4f;
+
+    private float fireRate = 0.25f;
+    private float nextFire = 0.0f;
+    
+
+    private GameObject bullet;
     
 
     public void Shoot()
-    {            
-            Instantiate(m_prefabBullet, m_spawnPoint.position, m_spawnPoint.rotation);
+    {
        
+        if(Time.time > nextFire)
+        {
+            bullet = Instantiate(m_prefabBullet, m_spawnPoint.position, m_spawnPoint.rotation);
+            nextFire = Time.time + fireRate;
+        }
+           
+    }
+
+    private void Update()
+    {
+        Destroy(bullet, 2f);
     }
 }
