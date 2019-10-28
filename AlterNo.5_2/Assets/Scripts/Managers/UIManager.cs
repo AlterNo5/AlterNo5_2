@@ -24,17 +24,23 @@ public class UIManager : MonoBehaviour
     public Text textoCantidad_arma;
 
     public int nivel;
-    Canvas uIManager;
+    Canvas canvas;
 
 
     private void Start()
     {
-      if(nivel == 4)
-        {
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
-            uIManager = GameObject.Find("Canvas").GetComponent<Canvas>();
-            uIManager.enabled = false;
+        switch(nivel)
+        {
+            case 2:
+                armaImage.sprite = armas[1];
+                break;
+            case 4:
+                 canvas.enabled = false;
+                break;
         }
+  
     }
 
     //  *************  Método UpdateMatB  *********************
@@ -50,9 +56,15 @@ public class UIManager : MonoBehaviour
         {
             matB_Image.sprite = matB[currentMatB];
         }
-       
-        textoCantidad_MatB.text = "x " + currentMatB;
-       
+       if(currentMatB == 0)
+        {
+            textoCantidad_MatB.text = " ";
+        }
+       else
+        {
+           
+            textoCantidad_MatB.text = "x " + currentMatB;
+        }      
     }
 
     //  *************  Método UpdateMatA  *********************
@@ -66,8 +78,19 @@ public class UIManager : MonoBehaviour
         {
             matA_Image.sprite = matA[currentMatA];
         }
+
+        if (currentMatA == 0)
+        {
+            textoCantidad_MatA.text = " ";
+        }
+        else
+        {
+
+            textoCantidad_MatA.text = "x " + currentMatA;
+        }
+
+
        
-        textoCantidad_MatA.text = "x " + currentMatA;      
     }
 
     //  *************  Método UpdateArma  *********************
@@ -81,10 +104,11 @@ public class UIManager : MonoBehaviour
         {
             armaImage.sprite = armas[arma];
         }
+       
     }
 
     //  *************  Método UpdateObjetoDefensa *********************
-    public void UpdateObjetoDefensa_Mali(int objeDefensa)
+    public void UpdateObjetoDefensa(int objeDefensa)
     {      
         if(objeDefensa >=1)
         {
@@ -94,8 +118,19 @@ public class UIManager : MonoBehaviour
         {
             objetoDefensaImage.sprite = objetoDefensa[objeDefensa];
         }
+        if (nivel != 2)
+        {
+            textoCantidad_ObjDef.enabled = false;
+        }
+        else
+        {
+            objetoDefensaImage.sprite = objetoDefensa[1];
+            objeDefensa = objeDefensa + 4;
+            textoCantidad_ObjDef.enabled = true;
+            textoCantidad_ObjDef.text = "x" + objeDefensa;
+        }
        
-        textoCantidad_ObjDef.text = "x" + objeDefensa;
+      
     }
 
     

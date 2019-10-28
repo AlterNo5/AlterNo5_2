@@ -23,75 +23,67 @@ public class Crafteo : MonoBehaviour
     {
     
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-
-        if (_uiManager.nivel == 2)
+        if(_uiManager.nivel == 2)
         {
-            obj_Defensa = 4;
-           
-            _uiManager.UpdateArma(2);
-            _uiManager.UpdateObjetoDefensa_Mali(obj_Defensa);
+            armaCreada = 4;
+            _uiManager.textoCantidad_arma.text = "x " + armaCreada;
         }
+       
+       
 
-        if (_uiManager != null)
-        {
-            _uiManager.UpdateMatB(num_MatB);
-            _uiManager.UpdateMatA(num_MatA);
-           
-            
-                              
-        }
+      
     }
 
     void Update()
     {
-        //StartCoroutine("Esperar");
+       
         obj_Defensa = Fabricar_objeto_defensa(num_MatB, num_MatA);
-        _uiManager.UpdateObjetoDefensa_Mali(obj_Defensa);
+        _uiManager.UpdateObjetoDefensa(obj_Defensa);
 
     }
 
-    // **************  Método Jabon *********************
+    // **************  Método AddMatB *********************
     public void AddMatB()
-    {
-        
-            num_MatB = num_MatB + 1;  
-       _uiManager.UpdateMatB(num_MatB);       // suma jabones y los manda a la clase uiManager
+    {        
+       num_MatB = num_MatB + 1;  
+       _uiManager.UpdateMatB(num_MatB);       
     }
 
-    // *************  Método Gota  *********************
+    // *************  Método AddMatA  *********************
     public void AddMatA()
     {    
-           num_MatA = num_MatA + 1;           
-        _uiManager.UpdateMatA(num_MatA);      // suma las gotas y las manda a la clase uiManager    
+        num_MatA = num_MatA + 1;           
+        _uiManager.UpdateMatA(num_MatA);        
     }
 
     // *************  Método Arma  *********************
     public void Arma()
     {
-        if(_uiManager.nivel == 2)
-        {
-            arma = arma + 4;
-        }
-        else
-        {
-            arma = arma + 1;
-        }
-                                 
+        arma = arma + 1;                               
         _uiManager.UpdateArma(arma);                    
        
     }
     // *************  Fabricar Arma  *****************************
-    public int Fabricar_Arma(int matA)
+    public int Fabricar_Arma()
     {
-        num_MatA = matA;
-        if (num_MatB == 0 & num_MatA == 1)
+        
+        if (_uiManager.nivel == 2)
         {
-            num_MatA = 0;
+           
+           
+            if (num_MatB == 0 & num_MatA == 1)
+            {
+                num_MatA = 0;
 
-            armaCreada = armaCreada + 4;
-            _uiManager.UpdateMatA(num_MatA);
+                armaCreada = armaCreada + 4;
+                _uiManager.UpdateMatA(num_MatA);
+                _uiManager.textoCantidad_arma.text = "x" + armaCreada;
+               
+            }
+          
         }
-        return armaCreada;
+                return armaCreada;
+
     }
 
     //  **************  Método Fabricar objeto defensa  *************
