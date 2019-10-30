@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
+    public GameObject AjustesCanvas;
+
+    void Start()
+    {
+        AjustesCanvas.SetActive(false);
+    }
+
     public void ClickPlay()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single); // tambien se puede poner el nombre de la escena, aditivo se cargan las dos y single solo una
@@ -17,7 +25,12 @@ public class MenuManager : MonoBehaviour
 
     public void ClickAjustes()
     {
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        AjustesCanvas.SetActive(true);
+    }
+
+    public void ExitToMenu()
+    {
+        AjustesCanvas.SetActive(false);
     }
 
     public void ClickPartidas()

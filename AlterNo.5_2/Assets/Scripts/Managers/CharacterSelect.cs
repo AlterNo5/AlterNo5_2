@@ -12,7 +12,7 @@ public class CharacterSelect : MonoBehaviour
     private int SceneNumber = 0;
     public GameObject CanvasPartidas;
     // Para poder borrar partidas
-    private int NumberClicks_1 = 0;
+    private int NumberClicks_1, NumberClicks_2, NumberClicks_3;
     public GameObject VentanaBorrar;
 
     private int index;
@@ -68,18 +68,56 @@ public class CharacterSelect : MonoBehaviour
     }
 
     //-------------------Ventana de Partidas-------------------------------
+    //Pon un bol que cambie a true cuando una partida se seleccione, luego cuando presione back lo cambie a false
+    //Asi decides que partida esta seleccionada, a lo mejor y una player preference
     public void Partida1()
     {
+        NumberClicks_2 = 0;
+        NumberClicks_3 = 0;
         NumberClicks_1++;
         
         if (NumberClicks_1 >= 2)
         {
             CanvasPartidas.SetActive(false);
-            SceneNumber = 1;
             CanvasChange.SetActive(true);
+            PlayerPrefs.SetInt("Partida_1", 1);
+            NumberClicks_1 = 0;
         }
      
 
+    }
+
+    public void Partida2()
+    {
+        NumberClicks_1 = 0;
+        NumberClicks_3 = 0;
+        NumberClicks_2++;
+        if (NumberClicks_2 >= 2)
+        {
+            CanvasPartidas.SetActive(false);
+            CanvasChange.SetActive(true);
+            PlayerPrefs.SetInt("Partida_2", 1);
+            NumberClicks_2 = 0;
+        }
+    }
+
+    public void Partida3()
+    {
+        NumberClicks_1 = 0;
+        NumberClicks_2 = 0;
+        NumberClicks_3++;
+        if (NumberClicks_3 >= 2)
+        {
+            CanvasPartidas.SetActive(false);
+            CanvasChange.SetActive(true);
+            PlayerPrefs.SetInt("Partida_3", 1);
+            NumberClicks_3 = 0;
+        }
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 
     public void BorrarPartida()
@@ -90,7 +128,18 @@ public class CharacterSelect : MonoBehaviour
             VentanaBorrar.SetActive(true);
             
         }
-        
+        if (NumberClicks_2 == 1)
+        {
+            VentanaBorrar.SetActive(true);
+
+        }
+        if (NumberClicks_3 == 1)
+        {
+            VentanaBorrar.SetActive(true);
+
+        }
+
+
     }
 
     public void Sip()

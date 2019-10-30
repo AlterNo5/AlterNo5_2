@@ -8,11 +8,13 @@ public class PauseMenu : MonoBehaviour
 
     public static bool PausedGame = false;
     public GameObject PauseCanvas;
+    public GameObject AjusteCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         PauseCanvas.SetActive(false);
+        AjusteCanvas.SetActive(false);
     }
     
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         if (PausedGame == true) 
         { 
         PauseCanvas.SetActive(false);
+        AjusteCanvas.SetActive(false);
         Time.timeScale = 1.0f;
         PausedGame = false;
         }
@@ -49,7 +52,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ClickAjustes()
     {
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        AjusteCanvas.SetActive(true);
+        PauseCanvas.SetActive(false);
+    }
+
+    public void BackToGame()
+    {
+        AjusteCanvas.SetActive(false);
+        PauseCanvas.SetActive(true);
     }
 
     public void ClickSalir()
