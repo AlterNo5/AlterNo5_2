@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
@@ -29,9 +30,6 @@ public class GameManager : MonoBehaviour
             return m_instance;
         }
     }
-
-   
-
 
     void Start()
     {

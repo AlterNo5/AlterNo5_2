@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/_Scenes/Nivel1.unity
     guid: a62591efcd7c0e54493c569c12e5c0ef
   - enabled: 1
-    path: Assets/_Scenes/InterfazPausa.unity
-    guid: a47f490b10db8594a986de33924b661d
+    path: Assets/_Scenes/Nivel2.unity
+    guid: 839599f9b07e71b42b0004df27dfeeda
   - enabled: 1
-    path: Assets/_Scenes/Ajustes.unity
-    guid: c9172b34e1f01914fa748eabc80d0346
+    path: Assets/_Scenes/Nivel3.unity
+    guid: 596b814a9c26465478272f8203386bfa
+  - enabled: 1
+    path: Assets/_Scenes/Nivel4.unity
+    guid: cc3f86074f6da7e49960fd7fc9893228
+  - enabled: 1
+    path: Assets/_Scenes/Nivel5.unity
+    guid: 04170b874caa3604a997abef3713b03d
   - enabled: 1
     path: Assets/_Scenes/CharacterSelect.unity
     guid: 1820501e8d2178d4eb13597789dd6780
-  - enabled: 1
-    path: Assets/_Scenes/Test.unity
-    guid: 08d715ddde5c0264ea84c6b0eeea500e
   m_configObjects: {}

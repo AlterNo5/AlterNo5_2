@@ -64,7 +64,18 @@ public class PauseMenu : MonoBehaviour
 
     public void ClickSalir()
     {
-        PlayerPrefs.SetInt("Partida_1", 1);
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            PlayerPrefs.SetInt("Partida1", SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            PlayerPrefs.SetInt("Partida2", SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+        {
+            PlayerPrefs.SetInt("Partida3", SceneManager.GetActiveScene().buildIndex);
+        }
         Resume();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }

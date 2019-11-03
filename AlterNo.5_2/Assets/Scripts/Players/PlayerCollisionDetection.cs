@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollisionDetection : MonoBehaviour
 {
@@ -36,8 +37,9 @@ public class PlayerCollisionDetection : MonoBehaviour
         {                       
             healthManager.RestaurarVida();
             healthManager.UpdateLives();
-            Destroy(other.gameObject);                            
-      }
+            Destroy(other.gameObject);
+            
+        }
 
         if (other.tag == "MatB")                             
         {         
@@ -58,6 +60,13 @@ public class PlayerCollisionDetection : MonoBehaviour
             crafteo.Arma();                               
             arma_transf.SetParent(spawnPointPersonaje_transf);              
             arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);              
+        }
+
+        if(other.tag == "Flag")
+        {
+          
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                                     
         }
     }
 }

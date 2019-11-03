@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
 
     public void ClickPartidas()
     {
-        SceneManager.LoadScene(4, LoadSceneMode.Single);
+        SceneManager.LoadScene(6, LoadSceneMode.Single);
     }
 
     public void ClickPausa()

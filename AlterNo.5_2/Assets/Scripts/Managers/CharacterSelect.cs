@@ -9,7 +9,12 @@ public class CharacterSelect : MonoBehaviour
     public GameObject CanvasChange;
 
     // Will later update number with savestate, right now this is my approach
-    private int SceneNumber = 0;
+    private bool Partida1_Selected = false;
+    private bool Partida2_Selected = false;
+    private bool Partida3_Selected = false;
+
+    
+
     public GameObject CanvasPartidas;
     // Para poder borrar partidas
     private int NumberClicks_1, NumberClicks_2, NumberClicks_3;
@@ -75,12 +80,16 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_2 = 0;
         NumberClicks_3 = 0;
         NumberClicks_1++;
+        PlayerPrefs.SetInt("Save1", 0);
         
         if (NumberClicks_1 >= 2)
         {
             CanvasPartidas.SetActive(false);
             CanvasChange.SetActive(true);
-            PlayerPrefs.SetInt("Partida_1", 1);
+            Partida1_Selected = true;
+            PlayerPrefs.SetInt("Save1", 1);
+            PlayerPrefs.SetInt("Save2", 0);
+            PlayerPrefs.SetInt("Save3", 0);
             NumberClicks_1 = 0;
         }
      
@@ -92,11 +101,16 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_1 = 0;
         NumberClicks_3 = 0;
         NumberClicks_2++;
+        PlayerPrefs.SetInt("Save2", 0);
+
         if (NumberClicks_2 >= 2)
         {
             CanvasPartidas.SetActive(false);
             CanvasChange.SetActive(true);
-            PlayerPrefs.SetInt("Partida_2", 1);
+            Partida2_Selected = true;
+            PlayerPrefs.SetInt("Save1", 0);
+            PlayerPrefs.SetInt("Save2", 1);
+            PlayerPrefs.SetInt("Save3", 0);
             NumberClicks_2 = 0;
         }
     }
@@ -106,11 +120,16 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_1 = 0;
         NumberClicks_2 = 0;
         NumberClicks_3++;
+        PlayerPrefs.SetInt("Save3", 0);
+
         if (NumberClicks_3 >= 2)
         {
             CanvasPartidas.SetActive(false);
             CanvasChange.SetActive(true);
-            PlayerPrefs.SetInt("Partida_3", 1);
+            Partida3_Selected = true;
+            PlayerPrefs.SetInt("Save1", 0);
+            PlayerPrefs.SetInt("Save2", 0);
+            PlayerPrefs.SetInt("Save3", 1);
             NumberClicks_3 = 0;
         }
     }
@@ -145,8 +164,22 @@ public class CharacterSelect : MonoBehaviour
     public void Sip()
     {
         VentanaBorrar.SetActive(false);
+        if (NumberClicks_1 == 1)
+        {
+            PlayerPrefs.SetInt("Partida1", 1);
+
+        }
+        if (NumberClicks_2 == 1)
+        {
+            PlayerPrefs.SetInt("Partida2", 1);
+
+        }
+        if (NumberClicks_3 == 1)
+        {
+            PlayerPrefs.SetInt("Partida3", 1);
+
+        }
         NumberClicks_1 = 0;
-        PlayerPrefs.SetInt("Partida_1", 0);
     }
 
     public void Nop()
@@ -156,9 +189,51 @@ public class CharacterSelect : MonoBehaviour
     }
     // ------------------------------------------------
 
+
+    public void BackButton_Change()
+    {
+        CanvasChange.SetActive(false);
+        CanvasPartidas.SetActive(true);
+        Partida1_Selected = false;
+        Partida2_Selected = false;
+        Partida3_Selected = false;
+        PlayerPrefs.SetInt("Save1", 0);
+        PlayerPrefs.SetInt("Save2", 0);
+        PlayerPrefs.SetInt("Save3", 0);
+    }
+
+
     public void ConfirmButton()
     {
+        
+
+        PlayerPrefs.SetInt("PartidaSelected", 0);
         PlayerPrefs.SetInt("CharacterSelected", index);
-        SceneManager.LoadScene(PlayerPrefs.GetInt("Partida_1"), LoadSceneMode.Single);
+        if (Partida1_Selected == true && Partida2_Selected == false && Partida3_Selected == false)
+        {
+            PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida1"));
+        }
+        else if (Partida1_Selected == false && Partida2_Selected == true && Partida3_Selected == false)
+        {
+            PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida2"));
+        }
+        else if (Partida1_Selected == false && Partida2_Selected == false && Partida3_Selected == true)
+        {
+            PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida3"));
+        }
+        else if (Partida1_Selected == false && Partida2_Selected == false && Partida3_Selected == false)
+        {
+            PlayerPrefs.GetInt("PartidaSelected", 0);
+        }
+
+        if (PlayerPrefs.GetInt("PlayerSelected") == 0)
+        {
+            PlayerPrefs.SetInt("PlayerSelected", 1);
+        }
+
+        Partida1_Selected = false;
+        Partida2_Selected = false;
+        Partida3_Selected = false;
+        SceneManager.LoadScene(PlayerPrefs.GetInt("PartidaSelected"), LoadSceneMode.Single);
     }
 }
