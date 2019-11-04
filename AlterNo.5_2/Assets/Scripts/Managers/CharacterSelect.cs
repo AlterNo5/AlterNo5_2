@@ -226,9 +226,9 @@ public class CharacterSelect : MonoBehaviour
             PlayerPrefs.GetInt("PartidaSelected", 0);
         }
 
-        if (PlayerPrefs.GetInt("PlayerSelected") == 0)
+        if (PlayerPrefs.GetInt("PartidaSelected") == 0)
         {
-            PlayerPrefs.SetInt("PlayerSelected", 1);
+            PlayerPrefs.SetInt("PartidaSelected", 1);
         }
 
         Partida1_Selected = false;
