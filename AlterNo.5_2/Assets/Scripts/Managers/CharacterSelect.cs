@@ -13,8 +13,6 @@ public class CharacterSelect : MonoBehaviour
     private bool Partida2_Selected = false;
     private bool Partida3_Selected = false;
 
-    
-
     public GameObject CanvasPartidas;
     // Para poder borrar partidas
     private int NumberClicks_1, NumberClicks_2, NumberClicks_3;
@@ -81,18 +79,10 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_3 = 0;
         NumberClicks_1++;
         PlayerPrefs.SetInt("Save1", 0);
-        
         if (NumberClicks_1 >= 2)
         {
-            CanvasPartidas.SetActive(false);
-            CanvasChange.SetActive(true);
-            Partida1_Selected = true;
-            PlayerPrefs.SetInt("Save1", 1);
-            PlayerPrefs.SetInt("Save2", 0);
-            PlayerPrefs.SetInt("Save3", 0);
             NumberClicks_1 = 0;
         }
-     
 
     }
 
@@ -102,17 +92,11 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_3 = 0;
         NumberClicks_2++;
         PlayerPrefs.SetInt("Save2", 0);
-
         if (NumberClicks_2 >= 2)
         {
-            CanvasPartidas.SetActive(false);
-            CanvasChange.SetActive(true);
-            Partida2_Selected = true;
-            PlayerPrefs.SetInt("Save1", 0);
-            PlayerPrefs.SetInt("Save2", 1);
-            PlayerPrefs.SetInt("Save3", 0);
             NumberClicks_2 = 0;
         }
+
     }
 
     public void Partida3()
@@ -121,17 +105,80 @@ public class CharacterSelect : MonoBehaviour
         NumberClicks_2 = 0;
         NumberClicks_3++;
         PlayerPrefs.SetInt("Save3", 0);
-
         if (NumberClicks_3 >= 2)
         {
-            CanvasPartidas.SetActive(false);
-            CanvasChange.SetActive(true);
+            NumberClicks_3 = 0;
+        }
+        
+    }
+
+    public void ConfirmPartida()
+    {
+
+        if (NumberClicks_1 == 1)
+        {
+            
+            Partida1_Selected = true;
+            PlayerPrefs.SetInt("Save1", 1);
+            PlayerPrefs.SetInt("Save2", 0);
+            PlayerPrefs.SetInt("Save3", 0);
+            NumberClicks_1 = 0;
+            if (PlayerPrefs.GetInt("YaEscogio_1") == 0)
+            {
+                CanvasPartidas.SetActive(false);
+                CanvasChange.SetActive(true);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_1"));
+                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida1"), LoadSceneMode.Single);
+            }
+        }
+
+       if (NumberClicks_2 == 1)
+        {
+            
+            Partida2_Selected = true;
+            PlayerPrefs.SetInt("Save1", 0);
+            PlayerPrefs.SetInt("Save2", 1);
+            PlayerPrefs.SetInt("Save3", 0);
+            NumberClicks_2 = 0;
+            if (PlayerPrefs.GetInt("YaEscogio_2") == 0)
+            {
+                CanvasPartidas.SetActive(false);
+                CanvasChange.SetActive(true);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_2"));
+                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida2"), LoadSceneMode.Single);
+            }
+        }
+       if (NumberClicks_3 == 1)
+        {
+            
             Partida3_Selected = true;
             PlayerPrefs.SetInt("Save1", 0);
             PlayerPrefs.SetInt("Save2", 0);
             PlayerPrefs.SetInt("Save3", 1);
             NumberClicks_3 = 0;
+            if (PlayerPrefs.GetInt("YaEscogio_3") == 0)
+            {
+                CanvasPartidas.SetActive(false);
+                CanvasChange.SetActive(true);
+            }
+            else 
+            {
+                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_3"));
+                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida3"), LoadSceneMode.Single);
+            }
         }
+
+       
+       
+        
+
+
     }
 
     public void BackToMenu()
@@ -167,17 +214,17 @@ public class CharacterSelect : MonoBehaviour
         if (NumberClicks_1 == 1)
         {
             PlayerPrefs.SetInt("Partida1", 1);
-
+            PlayerPrefs.SetInt("YaEscogio_1", 0);
         }
         if (NumberClicks_2 == 1)
         {
             PlayerPrefs.SetInt("Partida2", 1);
-
+            PlayerPrefs.SetInt("YaEscogio_2", 0);
         }
         if (NumberClicks_3 == 1)
         {
             PlayerPrefs.SetInt("Partida3", 1);
-
+            PlayerPrefs.SetInt("YaEscogio_3", 0);
         }
         NumberClicks_1 = 0;
     }
@@ -205,21 +252,28 @@ public class CharacterSelect : MonoBehaviour
 
     public void ConfirmButton()
     {
-        
+
 
         PlayerPrefs.SetInt("PartidaSelected", 0);
         PlayerPrefs.SetInt("CharacterSelected", index);
+
         if (Partida1_Selected == true && Partida2_Selected == false && Partida3_Selected == false)
         {
             PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida1"));
+            PlayerPrefs.SetInt("Index_1", index);
+            PlayerPrefs.SetInt("YaEscogio_1", 1);
         }
         else if (Partida1_Selected == false && Partida2_Selected == true && Partida3_Selected == false)
         {
             PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida2"));
+            PlayerPrefs.SetInt("Index_2", index);
+            PlayerPrefs.SetInt("YaEscogio_2", 1);
         }
         else if (Partida1_Selected == false && Partida2_Selected == false && Partida3_Selected == true)
         {
             PlayerPrefs.SetInt("PartidaSelected", PlayerPrefs.GetInt("Partida3"));
+            PlayerPrefs.SetInt("Index_3", index);
+            PlayerPrefs.SetInt("YaEscogio_3", 1);
         }
         else if (Partida1_Selected == false && Partida2_Selected == false && Partida3_Selected == false)
         {
