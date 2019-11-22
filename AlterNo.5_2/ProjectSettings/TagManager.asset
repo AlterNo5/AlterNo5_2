@@ -14,6 +14,7 @@ TagManager:
   - Jabon
   - Plataformas
   - Flag
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

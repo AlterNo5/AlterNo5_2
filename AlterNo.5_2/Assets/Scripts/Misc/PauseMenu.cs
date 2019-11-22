@@ -67,15 +67,20 @@ public class PauseMenu : MonoBehaviour
         if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
         {
             PlayerPrefs.SetInt("Partida1", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("Checkpoint_Partida1", PlayerPrefs.GetInt("ActivoCheckpoint"));
         }
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
         {
             PlayerPrefs.SetInt("Partida2", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("Checkpoint_Partida2", PlayerPrefs.GetInt("ActivoCheckpoint"));
         }
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
         {
             PlayerPrefs.SetInt("Partida3", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("Checkpoint_Partida3", PlayerPrefs.GetInt("ActivoCheckpoint"));
         }
+
+        
         Resume();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }

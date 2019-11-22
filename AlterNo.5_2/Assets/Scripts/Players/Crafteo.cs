@@ -15,10 +15,16 @@ public class Crafteo : MonoBehaviour
     public int armaCreada;
  
     UIManager _uiManager;
-  
-   
 
-   
+    // Checkpoint, Forma de guardar estados
+
+    private bool HayCheckpoint_1 = false;
+    private bool HayCheckpoint_2 = false;
+    private bool HayCheckpoint_3 = false;
+
+    // --------------------------------------
+
+
     void Start()
     {
     
@@ -28,10 +34,36 @@ public class Crafteo : MonoBehaviour
             armaCreada = 4;
             _uiManager.textoCantidad_arma.text = "x " + armaCreada;
         }
-       
-       
 
-      
+        if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
+        {
+            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {            
+                num_MatA = PlayerPrefs.GetInt("MaterialA_Partida1");
+                num_MatB = PlayerPrefs.GetInt("MaterialB_Partida1");
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+                num_MatA = PlayerPrefs.GetInt("MaterialA_Partida2");
+                num_MatB = PlayerPrefs.GetInt("MaterialB_Partida2");
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+                num_MatA = PlayerPrefs.GetInt("MaterialA_Partida3");
+                num_MatB = PlayerPrefs.GetInt("MaterialB_Partida3");
+            }
+
+           
+        }
+        else
+        {
+            num_MatA = 0;
+            num_MatB = 0;
+        }
+
+        
+
+
     }
 
     void Update()
@@ -39,7 +71,14 @@ public class Crafteo : MonoBehaviour
        
         obj_Defensa = Fabricar_objeto_defensa(num_MatB, num_MatA);
         _uiManager.UpdateObjetoDefensa(obj_Defensa);
+        PlayerPrefs.SetInt("MaterialA_Guardado", num_MatA);
+        PlayerPrefs.SetInt("MaterialB_Guardado", num_MatB);
 
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 
     // **************  Método AddMatB *********************

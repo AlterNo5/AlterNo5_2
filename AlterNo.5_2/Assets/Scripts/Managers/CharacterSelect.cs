@@ -215,16 +215,25 @@ public class CharacterSelect : MonoBehaviour
         {
             PlayerPrefs.SetInt("Partida1", 1);
             PlayerPrefs.SetInt("YaEscogio_1", 0);
+            PlayerPrefs.SetInt("Checkpoint_Partida1", 0);
+            PlayerPrefs.SetInt("MaterialA_Partida1", 0);
+            PlayerPrefs.SetInt("MaterialB_Partida1", 0);
         }
         if (NumberClicks_2 == 1)
         {
             PlayerPrefs.SetInt("Partida2", 1);
             PlayerPrefs.SetInt("YaEscogio_2", 0);
+            PlayerPrefs.SetInt("Checkpoint_Partida2", 0);
+            PlayerPrefs.SetInt("MaterialA_Partida2", 0);
+            PlayerPrefs.SetInt("MaterialB_Partida2", 0);
         }
         if (NumberClicks_3 == 1)
         {
             PlayerPrefs.SetInt("Partida3", 1);
             PlayerPrefs.SetInt("YaEscogio_3", 0);
+            PlayerPrefs.SetInt("Checkpoint_Partida3", 0);
+            PlayerPrefs.SetInt("MaterialA_Partida3", 0);
+            PlayerPrefs.SetInt("MaterialB_Partida3", 0);
         }
         NumberClicks_1 = 0;
     }

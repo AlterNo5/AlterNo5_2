@@ -13,9 +13,16 @@ public class GameManager : MonoBehaviour
     public GameObject Character_1;
     public GameObject Character_2;
     public GameObject Character_3;
-    
-    
-    
+
+    // Pon el checkpoint
+
+    public GameObject SpawnPoint_1;
+    public GameObject CheckPoint;
+
+    private bool SeActivoCheckpoint = false;
+
+    private GameObject Spawn;
+
     //Propiedad
     public static GameManager Instance
     {
@@ -33,11 +40,42 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
+
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            
+            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida1"));
+            
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            
+            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida2"));
+           
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+        {
+           
+            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida3"));
+            
+        }
+
+
+        if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
+        {
+            Spawn = CheckPoint;
+        }
+        else
+        {
+            Spawn = SpawnPoint_1;
+        }
 
         // player.transform.Rotate(0, 90, 0);
         cam = GetComponent<GameCamara>();
         SpawnPlayer();
 
+        
     }
 
     private void SpawnPlayer()
@@ -56,7 +94,9 @@ public class GameManager : MonoBehaviour
             player = Character_3;
         }
 
-        cam.SetTarget((Instantiate(player, Vector3.zero, player.transform.rotation) as GameObject).transform);
+        
+
+        cam.SetTarget((Instantiate(player, Spawn.transform.position, player.transform.rotation) as GameObject).transform);
     }
 
     // obtener el limite superior
@@ -76,6 +116,8 @@ public class GameManager : MonoBehaviour
     {
         m_levelManager = levelManager;
     }
+
+   
 }
 
 
