@@ -42,29 +42,10 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
-        {
-            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
-            {
-                UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida1"));
-                UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida1"));
-            }
-            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
-            {
-                UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida2"));
-                UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida2"));
-            }
-            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
-            {
-                UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida3"));
-                UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida3"));
-            }
-        }
-        else
-        {
-            UpdateMatA(0);
-            UpdateMatB(0);
-        }
+        
+
+
+        
 
 
 

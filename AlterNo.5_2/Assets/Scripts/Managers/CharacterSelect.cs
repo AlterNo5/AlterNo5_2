@@ -218,6 +218,7 @@ public class CharacterSelect : MonoBehaviour
             PlayerPrefs.SetInt("Checkpoint_Partida1", 0);
             PlayerPrefs.SetInt("MaterialA_Partida1", 0);
             PlayerPrefs.SetInt("MaterialB_Partida1", 0);
+            PlayerPrefs.SetInt("Arma_Partida1", 0);
         }
         if (NumberClicks_2 == 1)
         {
@@ -226,6 +227,7 @@ public class CharacterSelect : MonoBehaviour
             PlayerPrefs.SetInt("Checkpoint_Partida2", 0);
             PlayerPrefs.SetInt("MaterialA_Partida2", 0);
             PlayerPrefs.SetInt("MaterialB_Partida2", 0);
+            PlayerPrefs.SetInt("Arma_Partida2", 0);
         }
         if (NumberClicks_3 == 1)
         {
@@ -234,6 +236,7 @@ public class CharacterSelect : MonoBehaviour
             PlayerPrefs.SetInt("Checkpoint_Partida3", 0);
             PlayerPrefs.SetInt("MaterialA_Partida3", 0);
             PlayerPrefs.SetInt("MaterialB_Partida3", 0);
+            PlayerPrefs.SetInt("Arma_Partida3", 0);
         }
         NumberClicks_1 = 0;
     }

@@ -38,19 +38,49 @@ public class Crafteo : MonoBehaviour
         if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
         {
             if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+                _uiManager.UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida1"));
+                _uiManager.UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida1"));
+                _uiManager.UpdateArma(PlayerPrefs.GetInt("Arma_Partida1"));
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+                _uiManager.UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida2"));
+                _uiManager.UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida2"));
+                _uiManager.UpdateArma(PlayerPrefs.GetInt("Arma_Partida2"));
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+                _uiManager.UpdateMatA(PlayerPrefs.GetInt("MaterialA_Partida3"));
+                _uiManager.UpdateMatB(PlayerPrefs.GetInt("MaterialB_Partida3"));
+                _uiManager.UpdateArma(PlayerPrefs.GetInt("Arma_Partida3"));
+            }
+        }
+        else
+        {
+            _uiManager.UpdateMatA(0);
+            _uiManager.UpdateMatB(0);
+        }
+
+        if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
+        {
+            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
             {            
                 num_MatA = PlayerPrefs.GetInt("MaterialA_Partida1");
                 num_MatB = PlayerPrefs.GetInt("MaterialB_Partida1");
+                arma = PlayerPrefs.GetInt("Arma_Partida1");
             }
             else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
             {
                 num_MatA = PlayerPrefs.GetInt("MaterialA_Partida2");
                 num_MatB = PlayerPrefs.GetInt("MaterialB_Partida2");
+                arma = PlayerPrefs.GetInt("Arma_Partida2");
             }
             else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
             {
                 num_MatA = PlayerPrefs.GetInt("MaterialA_Partida3");
                 num_MatB = PlayerPrefs.GetInt("MaterialB_Partida3");
+                arma = PlayerPrefs.GetInt("Arma_Partida3");
             }
 
            
@@ -73,7 +103,7 @@ public class Crafteo : MonoBehaviour
         _uiManager.UpdateObjetoDefensa(obj_Defensa);
         PlayerPrefs.SetInt("MaterialA_Guardado", num_MatA);
         PlayerPrefs.SetInt("MaterialB_Guardado", num_MatB);
-
+        PlayerPrefs.SetInt("Arma_Guardada", arma);
     }
 
     private void LateUpdate()

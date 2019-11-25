@@ -71,12 +71,16 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("ActivoCheckpoint", 0);
             PlayerPrefs.SetInt("MaterialA_Partida1", 0);
             PlayerPrefs.SetInt("MaterialB_Partida1", 0);
+            PlayerPrefs.SetInt("Arma_Partida1", 0);
 
             PlayerPrefs.SetInt("MaterialA_Partida2", 0);
             PlayerPrefs.SetInt("MaterialB_Partida2", 0);
+            PlayerPrefs.SetInt("Arma_Partida2", 0);
 
             PlayerPrefs.SetInt("MaterialA_Partida3", 0);
             PlayerPrefs.SetInt("MaterialB_Partida3", 0);
+            PlayerPrefs.SetInt("Arma_Partida3", 0);
+
 
         }
 
@@ -92,6 +96,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 
                 PlayerPrefs.SetInt("MaterialA_Partida1", PlayerPrefs.GetInt("MaterialA_Guardado"));
                 PlayerPrefs.SetInt("MaterialB_Partida1", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida1", PlayerPrefs.GetInt("Arma_Guardada"));
             }
             else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
             {
@@ -99,6 +104,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 
                 PlayerPrefs.SetInt("MaterialA_Partida2", PlayerPrefs.GetInt("MaterialA_Guardado"));
                 PlayerPrefs.SetInt("MaterialB_Partida2", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida2", PlayerPrefs.GetInt("Arma_Guardada"));
             }
             else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
             {
@@ -106,6 +112,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 
                 PlayerPrefs.SetInt("MaterialA_Partida3", PlayerPrefs.GetInt("MaterialA_Guardado"));
                 PlayerPrefs.SetInt("MaterialB_Partida3", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida3", PlayerPrefs.GetInt("Arma_Guardada"));
             }
             Debug.Log(PlayerPrefs.GetInt("MaterialA_Partida1"));
 
