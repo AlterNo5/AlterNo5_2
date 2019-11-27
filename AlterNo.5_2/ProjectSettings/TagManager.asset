@@ -14,7 +14,6 @@ TagManager:
   - Jabon
   - Plataformas
   - Flag
-  - Target
   layers:
   - Default
   - TransparentFX
