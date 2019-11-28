@@ -18,9 +18,7 @@ public class Crafteo : MonoBehaviour
 
     // Checkpoint, Forma de guardar estados
 
-    private bool HayCheckpoint_1 = false;
-    private bool HayCheckpoint_2 = false;
-    private bool HayCheckpoint_3 = false;
+
 
     // --------------------------------------
 
@@ -60,6 +58,7 @@ public class Crafteo : MonoBehaviour
         {
             _uiManager.UpdateMatA(0);
             _uiManager.UpdateMatB(0);
+            _uiManager.UpdateArma(0);
         }
 
         if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
@@ -89,6 +88,7 @@ public class Crafteo : MonoBehaviour
         {
             num_MatA = 0;
             num_MatB = 0;
+            arma = 0;
         }
 
         

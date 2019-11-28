@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnPoint_1;
     public GameObject CheckPoint;
 
-    private bool SeActivoCheckpoint = false;
+   
 
     private GameObject Spawn;
 

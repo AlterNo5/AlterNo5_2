@@ -17,8 +17,10 @@ public class InputGun : MonoBehaviour
     void Start()
     {
         m_gun = GetComponent<Gun>();
-       
-       
+        PlayerPrefs.SetInt("Arma_Partida1", 0);
+        PlayerPrefs.SetInt("Arma_Partida2", 0);
+        PlayerPrefs.SetInt("Arma_Partida3", 0);
+
     }
 
     // Update is called once per frame
@@ -35,6 +37,19 @@ public class InputGun : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
+        
+        if (PlayerPrefs.GetInt("Save1") == 1 &&  PlayerPrefs.GetInt("Arma_Partida1") == 1)
+        {
+            withgun = true;
+        }
+        else if(PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Arma_Partida2") == 1)
+        {
+            withgun = true;
+        }
+        else if (PlayerPrefs.GetInt("Save3") == 1 &&  PlayerPrefs.GetInt("Arma_Partida3") == 1)
+        {
+            withgun = true;
+        }
 
         if (other.tag == "Player")
         {

@@ -12,12 +12,12 @@ public class GunCollision : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            
         }       
 
         
 
-        if(other.tag == "Plataformas")
+        if(other.gameObject)
         {
             Destroy(this.gameObject);
         }
