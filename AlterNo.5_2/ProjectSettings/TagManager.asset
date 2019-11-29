@@ -15,6 +15,7 @@ TagManager:
   - Plataformas
   - Flag
   - Checkpoint
+  - Target
   layers:
   - Default
   - TransparentFX
