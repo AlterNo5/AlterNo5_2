@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Restaurador
-  - Arma
-  - Bullet
-  - MatA
-  - MatB
-  - GotaAgua
-  - Jabon
-  - Plataformas
-  - Flag
-  - Checkpoint
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -25,9 +14,9 @@ TagManager:
   - 
   - 
   - 
-  - Player
-  - Enemy
-  - Bullet
+  - 
+  - 
+  - 
   - 
   - 
   - 
