@@ -30,7 +30,7 @@ public class PLayerControler : MonoBehaviour
     {
 
         playerPhysics = GetComponent<PlayerPhysics>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
 

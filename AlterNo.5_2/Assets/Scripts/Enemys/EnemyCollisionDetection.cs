@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemyCollisionDetection : MonoBehaviour
 {
-    HealthManager healthManager;
+    public HealthManager healthManager;
+    Animator player_Anim;
 
     private void Start()
     {
@@ -26,11 +27,21 @@ public class EnemyCollisionDetection : MonoBehaviour
         {
             healthManager.ReduceHealth();
             healthManager.UpdateLives();
+            player_Anim = other.GetComponent<Animator>();
+            player_Anim.SetTrigger("Damage");
             
                                       
-            Destroy(this.gameObject);              
+            Destroy(this.gameObject);
+            if(healthManager.vidaActual <= 0)
+            {
+                player_Anim.SetBool("Dead", true);
+                healthManager.Muerte();
+            }            
+        }
 
-            healthManager.Muerte();     
+        if(other.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
         }
 
         

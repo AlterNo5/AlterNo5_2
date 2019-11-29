@@ -134,9 +134,9 @@ public class HealthManager : MonoBehaviour
 
     public void Muerte()
     {
-        if (vidaActual == 0)
+        if (vidaActual <= 0)
         {
-            Invoke("LoadSceneDelay", 1.5f);
+            Invoke("LoadSceneDelay", 200f*Time.deltaTime);
         }
 
     }

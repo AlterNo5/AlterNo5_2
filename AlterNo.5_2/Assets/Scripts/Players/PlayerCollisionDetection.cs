@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollisionDetection : MonoBehaviour
 {
-    Crafteo crafteo;
+    public Crafteo crafteo;
     HealthManager healthManager;
     UIManager _uiManager;
 
@@ -17,11 +17,11 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     private void Start()
     {
-        player_transform= GameObject.Find("Personaje(Clone)").GetComponent<Transform>();
+        player_transform= GetComponent<Transform>();
         arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
-        crafteo =  GameObject.Find("Personaje(Clone)"). GetComponent<Crafteo>();
+        crafteo = GetComponent<Crafteo>();
         
     }
 
