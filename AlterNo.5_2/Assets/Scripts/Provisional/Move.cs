@@ -9,6 +9,7 @@ namespace Com.Project.Player
     {
         public float speed;
         public float m_turnSpeed;
+        public float movement_amount;
         public Animator anim;
         private PlayerState m_PlayerDirection;
         public GameObject m_PlayerModel;
@@ -25,7 +26,7 @@ namespace Com.Project.Player
             if (m_PlayerDirection.direction == PlayerState.lookDirection.LEFT)
             {
                 Quaternion target = Quaternion.Euler(0, 270, 0);
-                m_PlayerModel.transform.rotation = Quaternion.Slerp(m_PlayerModel.transform.rotation, target, m_turnSpeed*Time.deltaTime);
+                m_PlayerModel.transform.rotation = Quaternion.Slerp(m_PlayerModel.transform.rotation, target, m_turnSpeed * Time.deltaTime);
             }
             if (m_PlayerDirection.direction == PlayerState.lookDirection.RIGHT)
             {
@@ -34,12 +35,40 @@ namespace Com.Project.Player
             }
 
             Debug.Log(m_PlayerDirection.direction);
-            if(m_PlayerDirection.doingAnimation == false)
+            if (m_PlayerDirection.doingAnimation == false)
             {
                 anim.SetFloat("MovementSpeed", Mathf.Abs(PlayerInput.horizontal));
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x + PlayerInput.horizontal * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
-            }             
-            
+                if (!m_PlayerDirection.enTierra && m_PlayerDirection.direction == PlayerState.lookDirection.RIGHT)
+                {                    
+                    if (PlayerInput.horizontal < 0)
+                    {
+                        movement_amount = PlayerInput.horizontal * 0.5f;
+                    }
+                    else
+                    {
+                        movement_amount = Mathf.Abs(PlayerInput.horizontal);
+                    }
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x + movement_amount * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
+                else if (!m_PlayerDirection.enTierra && m_PlayerDirection.direction == PlayerState.lookDirection.LEFT)
+                {
+                    if (PlayerInput.horizontal > 0)
+                    {
+                        movement_amount = PlayerInput.horizontal * 0.5f;
+                    }
+                    else
+                    {
+                        movement_amount = Mathf.Abs(PlayerInput.horizontal) * -1f;
+                    }                    
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x + movement_amount * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
+                else
+                {
+                    movement_amount = PlayerInput.horizontal;
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x + movement_amount * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
+            }
+
         }
     }
 }
