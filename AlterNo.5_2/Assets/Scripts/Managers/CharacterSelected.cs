@@ -10,6 +10,8 @@ public class CharacterSelected : MonoBehaviour
 
     private void Start()
     {
+
+
         
         index = PlayerPrefs.GetInt("CharacterSelected");
 

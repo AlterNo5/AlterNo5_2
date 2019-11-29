@@ -46,19 +46,57 @@ public class GameManager : MonoBehaviour
         {
             
             PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida1"));
-            
+
+            if (PlayerPrefs.GetInt("Index_1") == 0)
+            {
+                player = Character_1;
+            }
+            else if (PlayerPrefs.GetInt("Index_1") == 1)
+            {
+                player = Character_2;
+            }
+            else if (PlayerPrefs.GetInt("Index_1") == 2)
+            {
+                player = Character_3;
+            }
+
+
         }
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
         {
             
             PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida2"));
-           
+            if (PlayerPrefs.GetInt("Index_2") == 0)
+            {
+                player = Character_1;
+            }
+            else if (PlayerPrefs.GetInt("Index_2") == 1)
+            {
+                player = Character_2;
+            }
+            else if (PlayerPrefs.GetInt("Index_2") == 2)
+            {
+                player = Character_3;
+            }
+
         }
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
         {
            
             PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida3"));
-            
+            if (PlayerPrefs.GetInt("Index_3") == 0)
+            {
+                player = Character_1;
+            }
+            else if (PlayerPrefs.GetInt("Index_3") == 1)
+            {
+                player = Character_2;
+            }
+            else if (PlayerPrefs.GetInt("Index_3") == 2)
+            {
+                player = Character_3;
+            }
+
         }
 
 
@@ -81,18 +119,7 @@ public class GameManager : MonoBehaviour
     private void SpawnPlayer()
     {
 
-        if (PlayerPrefs.GetInt("CharacterSelected") == 0)
-        {
-            player = Character_1;
-        }
-        else if (PlayerPrefs.GetInt("CharacterSelected") == 1)
-        {
-            player = Character_2;
-        }
-        else if (PlayerPrefs.GetInt("CharacterSelected") == 2)
-        {
-            player = Character_3;
-        }
+        
 
         
 
