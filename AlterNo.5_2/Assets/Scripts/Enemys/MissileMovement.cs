@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
+    public float speed = 1f;
+    public float rotationSpeed = 1f;
+    GameObject player;
+    GameObject playerLock;
 
-    public float speed = 1.0f;
-    public Transform player;
-    public Vector3 playerPos;
-    public Vector3 playercurrentDir;
-
-    // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerCollisionDetection>().gameObject.transform;
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        if (playerLock == null)
+        {
+            playerLock = GameObject.FindGameObjectWithTag("Target");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(playerPos == new Vector3(0,0,0) && playercurrentDir == new Vector3(0, 0, 0))
-        {
-            playerPos = player.position - transform.position;
-            playercurrentDir = Vector3.RotateTowards(transform.forward, playerPos, speed * Time.deltaTime, 0.0f);
-        }        
 
-        transform.position = Vector3.MoveTowards(transform.position, playerPos, speed * Time.deltaTime);
+        Vector3 playerDir = player.transform.position - transform.position;
+        Vector3 playercurrentDir = Vector3.RotateTowards(transform.forward, playerDir, rotationSpeed * Time.deltaTime, 360f);
+
         transform.rotation = Quaternion.LookRotation(playercurrentDir);
+        transform.position = Vector3.MoveTowards(transform.position, playerLock.transform.position, speed);
     }
 }
