@@ -5,59 +5,89 @@ using UnityEngine;
 public class Boss1Movement : MonoBehaviour
 {
     public GameObject[] spotPoints;
+    public GameObject atkStartPoint;
+    public GameObject atkEndPoint;
+    public GameObject bullet;
+    public Transform cannon;
     int currentSpot = 0;
-    float rotSpeed;
+    int prevSpot;
     public float speed = 1.0f;
+    public float atkStartSpeed = .7f;
+    public float atkEndSpeed = 2.0f;
     float wFRadius = 1;
+    public bool moveOut = false;
+    public bool atkStart = false;
+    public bool atkEnd = false;
 
-    public GameObject[] atkSpots;
-    int currentAtkSpot = 0;
-    float rotAtkSpeed;
-    public float atkSpeed = 1.0f;
-    float wFAtkRadius = 1;
-
-    public void Attack2()
+    private void Start()
     {
-        if (Vector3.Distance(atkSpots[currentAtkSpot].transform.position, transform.position) < wFAtkRadius)
-        {
-            currentAtkSpot++;
-
-            if (currentAtkSpot >= atkSpots.Length)
-            {
-                currentAtkSpot = 0;
-            }
-        }
-        transform.position = Vector3.MoveTowards(transform.position, atkSpots[currentAtkSpot].transform.position, Time.deltaTime * atkSpeed);
+        prevSpot = currentSpot;
+        moveOut = true;
     }
 
-    public void MoveAway()
+    public void MoveBoss ()
     {
-        if (Vector3.Distance(spotPoints[currentSpot].transform.position, transform.position) < wFRadius)
+        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch(other.tag)
         {
-            currentSpot = Random.Range(0, spotPoints.Length);
+            case "Player":
+                atkStart = true;
+                break;
+        }
+    }
+
+    void Update()
+    {
+
+        if (atkStart)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, atkStartPoint.transform.position, Time.deltaTime * atkStartSpeed);
+            if (Vector3.Distance(atkStartPoint.transform.position, transform.position) < wFRadius)
+            {
+                atkStart = false;
+                Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
+                atkEnd = true;
+                return;
+            }
+        }
+
+        if (atkEnd)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, atkEndPoint.transform.position, Time.deltaTime * atkEndSpeed);
+            if (Vector3.Distance(atkEndPoint.transform.position, transform.position) < wFRadius)
+            {
+                atkEnd = false;
+                Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
+                moveOut = true;
+                return;
+            }
+        }
+
+        if (moveOut)
+        {
+            if (Vector3.Distance(spotPoints[currentSpot].transform.position, transform.position) < wFRadius)
+            {
+                currentSpot = Random.Range(0, spotPoints.Length);
+
+                while (prevSpot == currentSpot)
+                {
+                    currentSpot = Random.Range(0, spotPoints.Length);
+                }
+
+                moveOut = false;
+                return;
+            }
+            prevSpot = currentSpot;
+            Invoke("MoveBoss", 0f);
 
             if (currentSpot >= spotPoints.Length)
             {
                 currentSpot = 0;
             }
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        switch (other.tag)
-        {
-            case "Player":
-                //Invoke("Attack2", 1f);
-                Invoke("MoveAway", 1f);
-                break;
-        }
-    }
-
-    void Update()
-    {        
-        
     }
 }
