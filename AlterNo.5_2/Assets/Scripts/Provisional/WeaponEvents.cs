@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponEvents : MonoBehaviour
+namespace Com.Project.Player
 {
-    public InputGun inputGun;
-    // Start is called before the first frame update
-    void Start()
-    {
-        inputGun = GetComponentInParent<InputGun>();
-    }
 
-    void finishedAnimation()
+
+    public class WeaponEvents : MonoBehaviour
     {
-        inputGun.playingAnim = false;
+        public InputGun inputGun;
+        // Start is called before the first frame update
+        void Start()
+        {
+            inputGun = GetComponentInParent<InputGun>();
+        }
+
+        void finishedAnimation()
+        {
+            inputGun.playingAnim = false;
+        }
     }
 }

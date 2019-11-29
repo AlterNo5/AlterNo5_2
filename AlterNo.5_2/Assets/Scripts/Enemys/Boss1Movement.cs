@@ -58,6 +58,6 @@ public class Boss1Movement : MonoBehaviour
 
     void Update()
     {        
-
+        
     }
 }

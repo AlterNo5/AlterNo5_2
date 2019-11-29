@@ -22,11 +22,11 @@ namespace Com.Project.Player
         public void Update()
         {
             horizontal = Input.GetAxis("Horizontal");
-            if (horizontal < 0)
+            if (horizontal < 0 && playerState.enTierra)
             {
                 playerState.direction = PlayerState.lookDirection.LEFT;
             }
-            else if (horizontal > 0)
+            else if (horizontal > 0 && playerState.enTierra)
             {
                 playerState.direction = PlayerState.lookDirection.RIGHT;
             }

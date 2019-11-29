@@ -17,7 +17,6 @@ namespace Com.Project.Player
 
         public float maxHealth;
         public float actualHealth;
-        public int cargaEspecial;
         public lookDirection direction = lookDirection.NONE;
         public bool enTierra;
         public bool doingAnimation = false;
