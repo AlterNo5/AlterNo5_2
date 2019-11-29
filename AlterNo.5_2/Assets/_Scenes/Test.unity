@@ -1022,6 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a98a0592f8aa34d8dcadae4fc0aa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crafteo: {fileID: 0}
   spawnPointPersonaje_transf: {fileID: 0}
   arma_transf: {fileID: 0}
   player_transform: {fileID: 0}
@@ -1037,6 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b767194ef7e64c54d868e58eea819625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthManager: {fileID: 0}
 --- !u!114 &1312229119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,6 +1288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   player: {fileID: 1965948210}
+  playerPos: {x: 0, y: 0, z: 0}
+  playercurrentDir: {x: 0, y: 0, z: 0}
 --- !u!65 &1419185706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1911,6 +1915,7 @@ GameObject:
   - component: {fileID: 1965948213}
   - component: {fileID: 1965948212}
   - component: {fileID: 1965948211}
+  - component: {fileID: 1965948214}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1990,6 +1995,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965948209}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1965948214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965948209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a98a0592f8aa34d8dcadae4fc0aa9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crafteo: {fileID: 0}
+  spawnPointPersonaje_transf: {fileID: 0}
+  arma_transf: {fileID: 0}
+  player_transform: {fileID: 0}
 --- !u!1 &2096730046
 GameObject:
   m_ObjectHideFlags: 0

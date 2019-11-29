@@ -50,7 +50,7 @@ public class Boss1Movement : MonoBehaviour
         switch (other.tag)
         {
             case "Player":
-                Invoke("Attack2", 1f);
+                //Invoke("Attack2", 1f);
                 Invoke("MoveAway", 1f);
                 break;
         }
