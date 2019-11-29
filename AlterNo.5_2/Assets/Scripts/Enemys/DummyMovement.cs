@@ -20,5 +20,13 @@ public class DummyMovement : MonoBehaviour
         {
             transform.position = (new Vector3(transform.position.x, transform.position.y, transform.position.z + (speed * Time.deltaTime)));
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position = (new Vector3(transform.position.x, transform.position.y + (speed * Time.deltaTime), transform.position.z ));
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position = (new Vector3(transform.position.x, transform.position.y - (speed * Time.deltaTime), transform.position.z ));
+        }
     }
 }
