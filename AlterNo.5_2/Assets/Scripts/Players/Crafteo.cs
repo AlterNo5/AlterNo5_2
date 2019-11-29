@@ -178,7 +178,7 @@ public class Crafteo : MonoBehaviour
                     _uiManager.UpdateMatB(num_MatB);
                     _uiManager.UpdateMatA(num_MatA);
                 }
-                else if (num_MatB == 1 & num_MatA == 2) 
+                else if (num_MatB >= 1 & num_MatA >= 2) 
                 {
                     num_MatB = 0;
                     num_MatA = 1;
@@ -190,13 +190,15 @@ public class Crafteo : MonoBehaviour
                     _uiManager.UpdateMatA(num_MatA);
                 }
             }
-            else if (mali == false & num_MatB == 1 & num_MatA == 2)
+            else if (mali == false & num_MatB >= 1 & num_MatA >= 2)
             {
                 num_MatB = 0;
                 num_MatA = 0;
 
                 objeto_creado = 1;
 
+                Destroy(GameObject.FindWithTag("MatB"));
+                Destroy(GameObject.FindWithTag("MatA"));
 
                 _uiManager.UpdateMatB(num_MatB);
                 _uiManager.UpdateMatA(num_MatA);
@@ -214,6 +216,9 @@ public class Crafteo : MonoBehaviour
 
                 objeto_creado = 1;
 
+                Destroy(GameObject.FindWithTag("MatB"));
+                Destroy(GameObject.FindWithTag("MatA"));
+
                 _uiManager.UpdateMatB(num_MatB);
                 _uiManager.UpdateMatA(num_MatA);               
             }
@@ -221,7 +226,7 @@ public class Crafteo : MonoBehaviour
         else if (_uiManager.nivel == 2)
         {
             
-            if (num_MatB == 1)
+            if (num_MatB >= 1)
             {
                 num_MatB = 0;
                 objeto_creado = objeto_creado+ 4;

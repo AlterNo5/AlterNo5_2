@@ -81,15 +81,16 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         if (other.tag == "MatB")                             
         {         
-            crafteo.AddMatB();          
+            crafteo.AddMatB();
+            crafteo.Fabricar_Arma();
             Destroy(other.gameObject);           
         }
 
         if(other.tag == "MatA")                             
         {       
             crafteo.AddMatA();
-            
             crafteo.Fabricar_Arma();
+
             Destroy(other.gameObject);
             
         }
