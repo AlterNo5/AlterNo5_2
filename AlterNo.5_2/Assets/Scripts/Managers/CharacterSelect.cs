@@ -14,6 +14,8 @@ public class CharacterSelect : MonoBehaviour
     private bool Partida3_Selected = false;
 
     public GameObject CanvasPartidas;
+
+    private int Yaconfirmo;
     // Para poder borrar partidas
     private int NumberClicks_1, NumberClicks_2, NumberClicks_3;
     public GameObject VentanaBorrar;
@@ -39,7 +41,8 @@ public class CharacterSelect : MonoBehaviour
         {
             CharacterList[index].SetActive(true);
         }
-
+        PlayerPrefs.SetInt("Yaconfirmo", 0);
+        Yaconfirmo = 0;
 
     }
 
@@ -115,6 +118,9 @@ public class CharacterSelect : MonoBehaviour
     public void ConfirmPartida()
     {
 
+        Yaconfirmo = 1;
+        PlayerPrefs.SetInt("Yaconfirmo", Yaconfirmo);
+
         if (NumberClicks_1 == 1)
         {
             
@@ -125,13 +131,13 @@ public class CharacterSelect : MonoBehaviour
             NumberClicks_1 = 0;
             if (PlayerPrefs.GetInt("YaEscogio_1") == 0)
             {
-                CanvasPartidas.SetActive(false);
-                CanvasChange.SetActive(true);
+               CanvasPartidas.SetActive(false);
+               CanvasChange.SetActive(true);
             }
             else
             {
-                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_1"));
-                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida1"), LoadSceneMode.Single);
+                //PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_1"));
+                SceneManager.LoadScene(7, LoadSceneMode.Single);
             }
         }
 
@@ -150,8 +156,8 @@ public class CharacterSelect : MonoBehaviour
             }
             else
             {
-                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_2"));
-                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida2"), LoadSceneMode.Single);
+               
+                SceneManager.LoadScene(7, LoadSceneMode.Single);
             }
         }
        if (NumberClicks_3 == 1)
@@ -169,8 +175,7 @@ public class CharacterSelect : MonoBehaviour
             }
             else 
             {
-                PlayerPrefs.SetInt("CharacterSelected", PlayerPrefs.GetInt("Index_3"));
-                SceneManager.LoadScene(PlayerPrefs.GetInt("Partida3"), LoadSceneMode.Single);
+                SceneManager.LoadScene(7, LoadSceneMode.Single);
             }
         }
 
@@ -294,12 +299,12 @@ public class CharacterSelect : MonoBehaviour
 
         if (PlayerPrefs.GetInt("PartidaSelected") == 0)
         {
-            PlayerPrefs.SetInt("PartidaSelected", 1);
+            PlayerPrefs.SetInt("PartidaSelected", 6);
         }
 
         Partida1_Selected = false;
         Partida2_Selected = false;
         Partida3_Selected = false;
-        SceneManager.LoadScene(PlayerPrefs.GetInt("PartidaSelected"), LoadSceneMode.Single);
+        SceneManager.LoadScene(7, LoadSceneMode.Single);
     }
 }
