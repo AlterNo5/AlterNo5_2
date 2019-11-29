@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParteC
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 10
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e0c1a6e1ed147874a8da18cbfd4bf1f2, type: 3}
+    totalSpriteSurfaceArea: 1989200
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 43aabde095b023a46a64f84a72edebec, type: 3}
+  - {fileID: 21300000, guid: 8efa834291537564dac7781cbdfffe63, type: 3}
+  - {fileID: 21300000, guid: 6a204e430fdba9f4e8f9a59503b1fa4b, type: 3}
+  - {fileID: 21300000, guid: 04d9b364f071957408b2de31be8b36bc, type: 3}
+  - {fileID: 21300000, guid: 5a0e0a05510251d4697ffc3621986c8e, type: 3}
+  - {fileID: 21300000, guid: 745e54267378e2c4c938b07a87fbc494, type: 3}
+  - {fileID: 21300000, guid: 7a596cd62e6cb4f449beb1a03e284a7c, type: 3}
+  - {fileID: 21300000, guid: cbb86a47bb8897447995fee9b43dea85, type: 3}
+  - {fileID: 21300000, guid: 8e86c9e71e2283e47851fa3920e9997a, type: 3}
+  - {fileID: 21300000, guid: 8fd932b8bca378a418f5c117b58928ba, type: 3}
+  - {fileID: 21300000, guid: 6e6620da0904e1f4bacfccf702104020, type: 3}
+  - {fileID: 21300000, guid: 378968bfe8f943f449fe1a62ffcc15df, type: 3}
+  - {fileID: 21300000, guid: 9ddee9ff57da54343add02528663ed7b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - C13_Fondo_nv1
+  - C1_Fondo_nv1
+  - C11_Fondo_nv1
+  - C10_Fondo_nv1
+  - C5_Fondo_nv1
+  - C12_Fondo_nv1
+  - C7_Fondo_nv1
+  - C2_Fondo_nv1
+  - C8_Fondo_nv1
+  - C6_Fondo_nv1
+  - C4_Fondo_nv1
+  - C9_Fondo_nv1
+  - C3_Fondo_nv1
+  m_Tag: ParteC
+  m_IsVariant: 0
