@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: middle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 10
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 215e688492804ae4dbf28220fc6f4219, type: 3}
+    totalSpriteSurfaceArea: 1160764
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d9268d81de033c24aa48cf2628b52e09, type: 3}
+  - {fileID: 21300000, guid: 80db91b13b320c24ebefb1c92ea6e4ae, type: 3}
+  - {fileID: 21300000, guid: f5451f52a6dc21f49862b631616d32c6, type: 3}
+  - {fileID: 21300000, guid: 95feaa03050611246a7a02ddf484e7d4, type: 3}
+  - {fileID: 21300000, guid: 6063b445be46d3843bb1af20f447533b, type: 3}
+  - {fileID: 21300000, guid: ce27d375d18e5c040bf4195415c3a090, type: 3}
+  - {fileID: 21300000, guid: 6fa39506617ead147a4291d971acad9d, type: 3}
+  - {fileID: 21300000, guid: 930f2d16198b8794cb3139dd80947468, type: 3}
+  - {fileID: 21300000, guid: ef42d7690b4dbdc49a8e036563669703, type: 3}
+  - {fileID: 21300000, guid: e2ddccebba5ffde47a19d9f2da73b98c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - NoPass_middle
+  - picosDER_front4
+  - picosDER_front1
+  - Pilateles_middle
+  - teleflotante2_middle
+  - teleFlotante_prendidas_middle
+  - PilaTeles1_middle
+  - teleFlotante_middle
+  - teleflotante2_prendidas_middle
+  - PilaTeles1_prendidas_middle
+  m_Tag: middle
+  m_IsVariant: 0
