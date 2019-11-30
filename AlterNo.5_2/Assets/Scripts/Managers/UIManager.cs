@@ -138,7 +138,7 @@ public class UIManager : MonoBehaviour
             textoCantidad_ObjDef.text = "x" + objeDefensa;
         }
 
-        
+        PlayerPrefs.SetInt("NumDefensas", objeDefensa);
       
     }
 

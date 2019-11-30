@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnPoint_1;
     public GameObject CheckPoint;
 
-   
+    public PlayerCollisionDetection playerCollisionDetection;
 
     private GameObject Spawn;
 
@@ -115,6 +115,9 @@ public class GameManager : MonoBehaviour
 
         
     }
+
+    
+
 
     private void SpawnPlayer()
     {

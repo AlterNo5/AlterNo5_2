@@ -12,9 +12,10 @@ public class PlayerCollisionDetection : MonoBehaviour
     public Transform spawnPointPersonaje_transf;
     public Transform arma_transf;
     public Transform player_transform;
-    private bool PickGun = false;
+    
 
-
+    public Transform SpawnObjDef;
+    public Transform Def_transf;
 
     private void Start()
     {
@@ -52,6 +53,8 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         player_transform= GetComponent<Transform>();
         arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
+        Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
+
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
         crafteo = GetComponent<Crafteo>();
@@ -66,9 +69,21 @@ public class PlayerCollisionDetection : MonoBehaviour
         {
             arma_transf.SetParent(spawnPointPersonaje_transf);
             arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);
+            
         }
 
 
+    }
+
+    public void CraftObjDefence()
+    {
+        if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            Def_transf.SetParent(SpawnObjDef);
+            Def_transf.SetPositionAndRotation(SpawnObjDef.position, Def_transf.rotation);
+            PlayerPrefs.SetInt("NumDefensas", 0);
+            _uiManager.UpdateObjetoDefensa(0);
+        }
     }
 
    

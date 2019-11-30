@@ -106,11 +106,6 @@ public class Crafteo : MonoBehaviour
         PlayerPrefs.SetInt("Arma_Guardada", arma);
     }
 
-    private void LateUpdate()
-    {
-        
-    }
-
     // **************  Método AddMatB *********************
     public void AddMatB()
     {        

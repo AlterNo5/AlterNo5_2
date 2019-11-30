@@ -16,6 +16,8 @@ TagManager:
   - Flag
   - Checkpoint
   - Target
+  - Burbuja
+  - ObjetoDef
   layers:
   - Default
   - TransparentFX
