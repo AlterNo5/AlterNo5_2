@@ -14,9 +14,11 @@ public class Boss1Movement : MonoBehaviour
     public float speed = 1.0f;
     public float atkStartSpeed = .7f;
     public float atkEndSpeed = 2.0f;
+    public float cadencia;
     float wFRadius = 1;
     public bool moveOut = false;
     public bool atkStart = false;
+    public bool canAttack = false;
     public bool atkEnd = false;
 
     private void Start()
@@ -24,20 +26,21 @@ public class Boss1Movement : MonoBehaviour
         prevSpot = currentSpot;
         moveOut = true;
     }
-
-    public void MoveBoss ()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.tag)
+        switch (other.tag)
         {
             case "Player":
                 atkStart = true;
+                atkEnd = false;
+                canAttack = true;
+                StartCoroutine(shoot());
                 break;
         }
+    }
+    public void MoveBoss ()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
     }
 
     void Update()
@@ -49,8 +52,7 @@ public class Boss1Movement : MonoBehaviour
             if (Vector3.Distance(atkStartPoint.transform.position, transform.position) < wFRadius)
             {
                 atkStart = false;
-                Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
-                atkEnd = true;
+                atkEnd = true;                
                 return;
             }
         }
@@ -60,8 +62,7 @@ public class Boss1Movement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, atkEndPoint.transform.position, Time.deltaTime * atkEndSpeed);
             if (Vector3.Distance(atkEndPoint.transform.position, transform.position) < wFRadius)
             {
-                atkEnd = false;
-                Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
+                atkEnd = false;                
                 moveOut = true;
                 return;
             }
@@ -89,5 +90,15 @@ public class Boss1Movement : MonoBehaviour
                 currentSpot = 0;
             }
         }
+
+    }
+
+    IEnumerator shoot()
+    {
+        while (canAttack == true)
+        {
+            yield return new WaitForSeconds(cadencia);
+            Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
+        }        
     }
 }
