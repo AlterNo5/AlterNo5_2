@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fondo_imagenes
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 10
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 36baefb58ed09f546a02f6782fb96610, type: 3}
+    totalSpriteSurfaceArea: 1877504
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 97653dc02e655614fa967a53546146a8, type: 3}
+  - {fileID: 21300000, guid: c86fb721176c14748a738e33f93b269a, type: 3}
+  - {fileID: 21300000, guid: eaa88c637a9c3a64b806fe775e6ca679, type: 3}
+  - {fileID: 21300000, guid: db8e1bb731dae844f9c993c0412351b1, type: 3}
+  - {fileID: 21300000, guid: 8d0134b983c8c39459a21b415b260458, type: 3}
+  - {fileID: 21300000, guid: f3f9d6d90089e164690805dac6df27ac, type: 3}
+  - {fileID: 21300000, guid: 20d6488ade845a844941c3169d19fce8, type: 3}
+  - {fileID: 21300000, guid: 9ef6114bad21fe144894022f20c3c487, type: 3}
+  - {fileID: 21300000, guid: 916a418c586bf31419e84005d508d40d, type: 3}
+  - {fileID: 21300000, guid: 462daebd33fbd3f4baa1524689941c3d, type: 3}
+  - {fileID: 21300000, guid: 5066bfcdc8df6d745a39cabd613e5ee2, type: 3}
+  - {fileID: 21300000, guid: d0ad0eff374cc104b811ae82be2b1ff4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - A4_Fondo_Nv5
+  - C2Fondo_Nv5
+  - B3_Fondo_Nv5
+  - B1_Fondo_Nv5
+  - B2_Fondo_Nv5
+  - C4_Fondo_Nv5
+  - A2_Fondo_Nv5
+  - B4_Fondo_Nv5_
+  - A1_Fondo_Nv5
+  - A3_Fondo_Nv5
+  - C1_Fondo_Nv5
+  - C3_Fondo_Nv5
+  m_Tag: fondo_imagenes
+  m_IsVariant: 0
