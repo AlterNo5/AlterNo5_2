@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rocas_Middle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 10
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 4653d5562272ae547a3e14f85dde6c1b, type: 3}
+    totalSpriteSurfaceArea: 2495176
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 62b62121ddfdea74d8c77f8f5f7b52e9, type: 3}
+  - {fileID: 21300000, guid: 4a3401b6211ef3b41be1103cc3b3c5f7, type: 3}
+  - {fileID: 21300000, guid: 6c1f78786dc758540bbc35680f09fdef, type: 3}
+  - {fileID: 21300000, guid: d71483d884544d2458c4450e33fd2fe3, type: 3}
+  - {fileID: 21300000, guid: 3a157429a914d0f47b71213f0a71009f, type: 3}
+  - {fileID: 21300000, guid: c444274a9ebe06e40bece2a442dc188a, type: 3}
+  - {fileID: 21300000, guid: 26d6a21c655b5a847ae4d4b2a95f4e27, type: 3}
+  - {fileID: 21300000, guid: d67b84dc9ae271144b89283bd0b043f4, type: 3}
+  - {fileID: 21300000, guid: 3fb58fdd0949fd94eba07f32714df11f, type: 3}
+  - {fileID: 21300000, guid: 9f26ecfd5564d954f96ba831233e4b1b, type: 3}
+  - {fileID: 21300000, guid: 7c30591ef3d9ae940b97533be4a60e25, type: 3}
+  - {fileID: 21300000, guid: aa45c67ee00d1a74693d8f6edbf49e19, type: 3}
+  - {fileID: 21300000, guid: 5985ee8ea0779234a9a280e202a4af11, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - roca_back_1
+  - roca_back_6
+  - roca_back_8
+  - roca_back_11
+  - roca_back_5
+  - roca_back_3
+  - roca_back_2
+  - roca_back_12
+  - roca_back_10
+  - roca_back_4
+  - roca_back_13
+  - roca_back_7
+  - roca_back_9
+  m_Tag: rocas_Middle
+  m_IsVariant: 0
