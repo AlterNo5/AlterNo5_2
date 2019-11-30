@@ -71,6 +71,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     }
 
+   
     //  *****************  Método OnTriggerEnter  ***********************
     public void OnTriggerEnter(Collider other)
     {
@@ -111,8 +112,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         if(other.tag == "Flag")
         {
-
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
             PlayerPrefs.SetInt("ActivoCheckpoint", 0);
             PlayerPrefs.SetInt("MaterialA_Partida1", 0);
             PlayerPrefs.SetInt("MaterialB_Partida1", 0);
@@ -128,9 +128,12 @@ public class PlayerCollisionDetection : MonoBehaviour
 
             PlayerPrefs.SetInt("Arma_Guardada", 0);
             PlayerPrefs.SetInt("Picked_Gun", 0);
+
+            SceneManager.LoadScene(8, LoadSceneMode.Single);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        if(other.tag == "Checkpoint")
+        if (other.tag == "Checkpoint")
         {
 
             PlayerPrefs.SetInt("ActivoCheckpoint", 1);
