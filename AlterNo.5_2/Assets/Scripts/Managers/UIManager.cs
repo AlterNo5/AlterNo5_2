@@ -137,7 +137,8 @@ public class UIManager : MonoBehaviour
             textoCantidad_ObjDef.enabled = true;
             textoCantidad_ObjDef.text = "x" + objeDefensa;
         }
-       
+
+        
       
     }
 
