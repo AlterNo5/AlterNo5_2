@@ -9,26 +9,40 @@ public class MissileMovement : MonoBehaviour
     GameObject player;
     GameObject playerLock;
 
+    public float speed = 1.0f;
+    public Transform player;
+    public Vector3 playerPos;
+    private float time_life;
+    private float born;
+    public float time_max;
+
+
+    // Start is called before the first frame update
     void Start()
     {
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
-
-        if (playerLock == null)
-        {
-            playerLock = GameObject.FindGameObjectWithTag("Target");
-        }
+        player = FindObjectOfType<PlayerCollisionDetection>().gameObject.transform;
+        born = Time.time;
     }
 
     void Update()
     {
 
-        Vector3 playerDir = player.transform.position - transform.position;
-        Vector3 playercurrentDir = Vector3.RotateTowards(transform.forward, playerDir, rotationSpeed * Time.deltaTime, 360f);
+        if (playerPos == new Vector3(0, 0, 0))
+        {
+            playerPos = player.position;
+            transform.LookAt(playerPos);
+        }
 
-        transform.rotation = Quaternion.LookRotation(playercurrentDir);
-        transform.position = Vector3.MoveTowards(transform.position, playerLock.transform.position, speed);
+        transform.position = transform.position + transform.forward * speed * Time.deltaTime;
+
+        if(time_life >= time_max)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            time_life = Time.time - born;
+        }
+
     }
 }

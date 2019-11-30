@@ -7,14 +7,18 @@ public class Boss1Movement : MonoBehaviour
     public GameObject[] spotPoints;
     public GameObject atkStartPoint;
     public GameObject atkEndPoint;
+    public GameObject bullet;
+    public Transform cannon;
     int currentSpot = 0;
     int prevSpot;
     public float speed = 1.0f;
     public float atkStartSpeed = .7f;
     public float atkEndSpeed = 2.0f;
+    public float cadencia;
     float wFRadius = 1;
     public bool moveOut = false;
     public bool atkStart = false;
+    public bool canAttack = false;
     public bool atkEnd = false;
 
     private void Start()
@@ -22,20 +26,21 @@ public class Boss1Movement : MonoBehaviour
         prevSpot = currentSpot;
         moveOut = true;
     }
-
-    public void MoveBoss ()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.tag)
+        switch (other.tag)
         {
             case "Player":
                 atkStart = true;
+                atkEnd = false;
+                canAttack = true;
+                StartCoroutine(shoot());
                 break;
         }
+    }
+    public void MoveBoss ()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
     }
 
     void Update()
@@ -84,6 +89,16 @@ public class Boss1Movement : MonoBehaviour
             {
                 currentSpot = 0;
             }
+        }
+
+    }
+
+    IEnumerator shoot()
+    {
+        while (canAttack == true)
+        {
+            yield return new WaitForSeconds(cadencia);
+            Instantiate(bullet, cannon.transform.position, cannon.transform.rotation);
         }
     }
 }
