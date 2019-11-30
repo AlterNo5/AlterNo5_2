@@ -7164,11 +7164,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: pez_solo
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 0a1a2acb4e171974ab6b2f81cd61ae93,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 42b09d59d5046ed449a14468b870379b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 0a1a2acb4e171974ab6b2f81cd61ae93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7239,6 +7234,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0a1a2acb4e171974ab6b2f81cd61ae93,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 42b09d59d5046ed449a14468b870379b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a1a2acb4e171974ab6b2f81cd61ae93, type: 3}
 --- !u!1 &1339334714
@@ -9143,7 +9143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782710366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.8, y: -12.9, z: 0}
+  m_LocalPosition: {x: -0.9, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
