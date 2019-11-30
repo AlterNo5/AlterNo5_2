@@ -14,7 +14,8 @@ public class PlayerCollisionDetection : MonoBehaviour
     public Transform player_transform;
     
 
-    public Transform SpawnObjDef;
+    public Transform SpawnObjDef_1;
+    public Transform SpawnObjDef_2;
     public Transform Def_transf;
 
     private void Start()
@@ -79,13 +80,108 @@ public class PlayerCollisionDetection : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            Def_transf.SetParent(SpawnObjDef);
-            Def_transf.SetPositionAndRotation(SpawnObjDef.position, Def_transf.rotation);
-            PlayerPrefs.SetInt("NumDefensas", 0);
-            _uiManager.UpdateObjetoDefensa(0);
-        }
-    }
+            Def_transf.SetParent(SpawnObjDef_1);
+            Def_transf.SetPositionAndRotation(SpawnObjDef_1.position, Def_transf.rotation);
 
+            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+                if (PlayerPrefs.GetInt("Index_1") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+              
+
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+                if (PlayerPrefs.GetInt("Index_2") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+
+                if (PlayerPrefs.GetInt("Index_3") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+            }
+
+        }
+        else if(PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            Def_transf.SetParent(SpawnObjDef_2);
+            Def_transf.SetPositionAndRotation(SpawnObjDef_2.position, Def_transf.rotation);
+
+            if(PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+                if (PlayerPrefs.GetInt("Index_1") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+                if (PlayerPrefs.GetInt("Index_2") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+
+                if (PlayerPrefs.GetInt("Index_3") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+            }
+        }
+
+        PlayerPrefs.SetInt("NumDefensas", 0);
+        _uiManager.UpdateObjetoDefensa(0);
+    }
+    
+    public void LoadDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
    
     //  *****************  Método OnTriggerEnter  ***********************
     public void OnTriggerEnter(Collider other)
@@ -120,9 +216,11 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Picked_Gun", 1);
             PlayerPrefs.SetInt("Arma_Guardada", 1);
 
+        }
 
-
-
+        if(other.tag == "Pitfall")
+        {
+            Invoke("LoadDeath", 1f);
         }
 
         if(other.tag == "Flag")

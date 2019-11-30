@@ -18,6 +18,7 @@ TagManager:
   - Target
   - Burbuja
   - ObjetoDef
+  - Pitfall
   layers:
   - Default
   - TransparentFX

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
-    public float speed = 1f;
-    public float rotationSpeed = 1f;
-    GameObject player;
-    GameObject playerLock;
+   
+    
 
     public float speed = 1.0f;
     public Transform player;
