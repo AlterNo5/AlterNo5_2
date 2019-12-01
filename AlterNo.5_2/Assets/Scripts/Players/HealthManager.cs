@@ -146,7 +146,7 @@ public class HealthManager : MonoBehaviour
     
     public void LoadSceneDelay()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);           // llama a la escena de inicio
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);           // llama a la escena de inicio
     }
 
    
