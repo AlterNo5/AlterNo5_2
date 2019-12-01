@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
-   
-    
-
     public float speed = 1.0f;
     public Transform player;
     public Vector3 playerPos;

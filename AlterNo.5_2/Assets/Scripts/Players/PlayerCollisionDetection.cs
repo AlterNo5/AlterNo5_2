@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class PlayerCollisionDetection : MonoBehaviour
 {
     public Crafteo crafteo;
-    HealthManager healthManager;
+    public HealthManager healthManager;
     UIManager _uiManager;
 
     public Transform spawnPointPersonaje_transf;
     public Transform arma_transf;
     public Transform player_transform;
-    
+
 
     public Transform SpawnObjDef_1;
     public Transform SpawnObjDef_2;
@@ -52,13 +52,13 @@ public class PlayerCollisionDetection : MonoBehaviour
 
 
 
-        
-        arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
-        Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
+        player_transform= GetComponent<Transform>();
+
 
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
-        crafteo = GetComponent<Crafteo>();
+        arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
+        Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
 
 
     }
@@ -70,7 +70,7 @@ public class PlayerCollisionDetection : MonoBehaviour
         {
             arma_transf.SetParent(spawnPointPersonaje_transf);
             arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);
-            
+
         }
 
 
@@ -94,7 +94,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 {
                     Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
                 }
-              
+
 
 
             }
@@ -177,12 +177,12 @@ public class PlayerCollisionDetection : MonoBehaviour
         PlayerPrefs.SetInt("NumDefensas", 0);
         _uiManager.UpdateObjetoDefensa(0);
     }
-    
+
     public void LoadDeath()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
-   
+
     //  *****************  Método OnTriggerEnter  ***********************
     public void OnTriggerEnter(Collider other)
     {
@@ -225,7 +225,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         if(other.tag == "Flag")
         {
-            
+
             PlayerPrefs.SetInt("ActivoCheckpoint", 0);
             PlayerPrefs.SetInt("MaterialA_Partida1", 0);
             PlayerPrefs.SetInt("MaterialB_Partida1", 0);

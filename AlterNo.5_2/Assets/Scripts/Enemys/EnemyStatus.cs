@@ -33,7 +33,8 @@ public class EnemyStatus : MonoBehaviour
             //{
             //    Destroy(gameObject.transform.parent.gameObject);
             //}
-            Destroy(gameObject.transform.parent.gameObject);
+            BossDeath.bossIsDeath = true;
+            //Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }

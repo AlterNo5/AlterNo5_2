@@ -40,38 +40,11 @@ SpriteAtlas:
       enableRotation: 1
       enableTightPacking: 1
     variantMultiplier: 1
-    packables:
-    - {fileID: 102900000, guid: 839ed5e28a2f29b4c8f97f4400c40e1c, type: 3}
-    totalSpriteSurfaceArea: 1844522
+    packables: []
+    totalSpriteSurfaceArea: 0
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites:
-  - {fileID: 21300000, guid: 3598e9b13ca75924dae9985c3c761d04, type: 3}
-  - {fileID: 21300000, guid: c7c43914e1ab8524f9a8c9c2b28dbc3e, type: 3}
-  - {fileID: 21300000, guid: d01a55459ab039f4abfed6e75492ae8a, type: 3}
-  - {fileID: 21300000, guid: 5acac665ce035c645a414d4a4dfc330b, type: 3}
-  - {fileID: 21300000, guid: b1572a174beebe94ebc63d00530bb4a3, type: 3}
-  - {fileID: 21300000, guid: 16463fb7d25cb584696688fcdf5ba050, type: 3}
-  - {fileID: 21300000, guid: cf5f082a51b549f46a5fe05b8bcdb811, type: 3}
-  - {fileID: 21300000, guid: a26fe5cbab29c9247b6113f9b181a92b, type: 3}
-  - {fileID: 21300000, guid: 7ac06ceb483084d4ea4527bc0a2a9381, type: 3}
-  - {fileID: 21300000, guid: 144638fc851c20a4488bc3da4650342a, type: 3}
-  - {fileID: 21300000, guid: 95885c8d05c0b344c8a317b73e85495e, type: 3}
-  - {fileID: 21300000, guid: f54f2afe02418bc4bbc7eed7219550bf, type: 3}
-  - {fileID: 21300000, guid: 109b84ff6c51cc9438c935cd652570cc, type: 3}
-  m_PackedSpriteNamesToIndex:
-  - A3_Fondo_nv1
-  - A9_Fondo_nv1
-  - A12_Fondo_nv1
-  - A13_Fondo_nv1
-  - A2_Fondo_nv1
-  - A1_Fondo_nv1
-  - A10_Fondo_nv1
-  - A7_Fondo_nv1
-  - A4_Fondo_nv1
-  - A5_Fondo_nv1
-  - A8_Fondo_nv1
-  - A6_Fondo_nv1
-  - A11_Fondo_nv1
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
   m_Tag: Atlas
   m_IsVariant: 0

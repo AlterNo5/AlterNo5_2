@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a98a0592f8aa34d8dcadae4fc0aa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crafteo: {fileID: 0}
+  crafteo: {fileID: 2849916918449320544}
   spawnPointPersonaje_transf: {fileID: 5014421059861490859}
   arma_transf: {fileID: 0}
   player_transform: {fileID: 0}
