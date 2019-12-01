@@ -7,10 +7,10 @@ public class AnimationEvents : MonoBehaviour
     public GameObject secondForm;
     public void ChangeForm()
     {
-        Invoke("activateForm", 2);
+        Invoke("activateForm", 1);
         
         this.gameObject.SetActive(false);
-
+        transform.parent.GetComponent<BallBoss>().m_anim = secondForm.GetComponent<Animator>();
     }
 
     private void activateForm()

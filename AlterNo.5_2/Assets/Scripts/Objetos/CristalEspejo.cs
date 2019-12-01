@@ -17,12 +17,12 @@ public class CristalEspejo : MonoBehaviour
             m_Camara.transform.Rotate(0, 180, 0);
             if (!other_side)
             {
-                other.gameObject.transform.Translate(0, 0, 1.2f);
+                other.gameObject.transform.position=new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, 2.5f);
                 other_side = true;
             }
             else if (other_side)
             {
-                other.gameObject.transform.Translate(0, 0, -1.2f);
+                other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, -2.5f);
                 other_side = false;
             }
 

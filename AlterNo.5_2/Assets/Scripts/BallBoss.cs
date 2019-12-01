@@ -16,24 +16,24 @@ public class BallBoss : MonoBehaviour
 {
     private FSM m_myStateMachine = new FSM();
 
-    
 
+    private int shoots=5;
     private GameObject m_target;
     private GameObject Player;
     public GameObject EnergyBall;
+    public Transform spawnBall;
     bool attacking;
     public Animator m_anim;
     private Vector3 m_destinatedMove;
-    private bool agresiveForm = false;
+    public bool agresiveForm = false;
     private float m_countChange = 0f;
     private float m_timeToChange;
     private bool m_inAttackRange;
     private bool focus = false;
     public float speed;
     private float speed2;
-    private Vector3[] m_Paths;
     public bool inPlane = true;
-    private int planePosition;
+    private float planePosition;
     RaycastHit hit;
     private int Randomx;
     private int Randomy;
@@ -52,16 +52,23 @@ public class BallBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!agresiveForm)
+        {
+            if (m_anim.GetBool("Transform"))
+            {
+                agresiveForm = true;
+            }
+        }
+            
+        m_myStateMachine.UpdateStateMachine();
 
-        
-       
         if (inPlane)
         {
-            planePosition = 5;
+            planePosition = 2.5f;
         }
-        else if (!inPlane)
+        else if (!inPlane)  
         {
-            planePosition = 0;
+            planePosition = -2.5f;
         }
 
         if (m_target != null)
@@ -73,7 +80,7 @@ public class BallBoss : MonoBehaviour
     private void FixedUpdate()
     {
 
-        m_myStateMachine.UpdateStateMachine();
+        
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
         {
             Debug.DrawLine(transform.position, hit.transform.position, Color.red);
@@ -157,7 +164,7 @@ public class BallBoss : MonoBehaviour
 
     private void EnterIdle()
     {
-       
+        shoots = 5;
         Debug.Log("IDLE");
         if (hited && focus == false)
         {
@@ -168,6 +175,8 @@ public class BallBoss : MonoBehaviour
     }
     private void UpdateIdle()
     {
+        
+
         if (hited)
         {
             ChangeState(BossBallStates.Move);
@@ -193,7 +202,7 @@ public class BallBoss : MonoBehaviour
    
     private void ExitIdle()
     {
-        if (speed < 10)
+        if (speed < 8)
         {
             speed += 0.2f;
         }
@@ -209,30 +218,48 @@ public class BallBoss : MonoBehaviour
             Randomx = UnityEngine.Random.Range(-11, -23);
             Randomy = UnityEngine.Random.Range(-8, 0);
             m_destinatedMove = new Vector3(Randomx, Randomy, planePosition);
-        
-        if (hited && focus == false)
+    
+        if (hited && agresiveForm)
         {
+            m_timeToChange = 0.1f;
+            focus = true;
+            attacking = false;
+            hited = false;
+        }
+        else if (hited && focus == false)
+        {
+
             ChangeState(BossBallStates.Idle);
             m_timeToChange = 0.1f;
             focus = true;
             attacking = false;
             hited = false;
 
+
         }
+        
 
 
     }
     private void UpdateMove()
     {
-        if (hited && focus==false)
+        if (hited && agresiveForm)
         {
+            m_timeToChange = 0.1f;
+            focus = true;
+            
+        }
+        else if (hited && focus==false)
+        {
+          
             ChangeState(BossBallStates.Idle);
             m_timeToChange = 0.1f;
             focus = true;
             attacking = false;
             hited = false;
-   
         }
+
+
         if (!agresiveForm)
         {
             if (m_target == null && focus == false)
@@ -283,9 +310,55 @@ public class BallBoss : MonoBehaviour
 
             }
         }
+        
         else if (agresiveForm)
         {
+            if (focus == false)
+            {
+                if (m_inAttackRange)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, m_destinatedMove, Time.deltaTime * (speed2));
+                }
+                else if (!m_inAttackRange)
+                {
+                    transform.position = transform.position;
+                    focus = true;
+                    m_timeToChange = 1f;
+                    m_countChange = 0;
+                }
+            }
+            else if(focus == true)
+            {
+                if (!hited)
+                {
+                    m_countChange += Time.deltaTime;
+                    if (m_countChange >= m_timeToChange && shoots > 0)
+                    {
+                        Instantiate(EnergyBall, spawnBall.position, transform.rotation);
+                        m_anim.SetTrigger("Attk");
+                        shoots -= 1;
+                    }
 
+                    if (shoots <= 0)
+                    {
+                        focus = false;
+                        ChangeState(BossBallStates.Idle);
+                        m_timeToChange = 2.2f;
+                        m_countChange = 0;
+                    }
+                }
+                else if (hited)
+                {
+                    focus = false;
+                    ChangeState(BossBallStates.Idle);
+                    m_timeToChange = 2.2f;
+                    m_countChange = 0;
+
+                }
+               
+            }
+            
+            
         }
         
 

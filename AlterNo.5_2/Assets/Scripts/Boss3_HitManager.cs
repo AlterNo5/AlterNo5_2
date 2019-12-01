@@ -19,22 +19,37 @@ public class Boss3_HitManager : MonoBehaviour
             Debug.Log(life);
 
             Boss.m_anim.SetTrigger("Hurted");
-            if (life <= 6)
-            {
-                Boss.m_anim.SetBool("Transform",true);
-               
-            }
+            
             if (life % 3 == 0 && life < 12)
             {
-               
-                Boss.ChangePlane();
+                if (life == 6)
+                {
+                    Boss.m_anim.SetBool("Transform", true);
+
+                }
+                else
+                {
+                    Boss.ChangePlane();
+                }
+                
+            }
+            else if (life <= 0)
+            {
+                Boss.m_anim.SetBool("Death", true);
+                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<SphereCollider>().isTrigger = false;
+                GetComponent<LookAt>().enabled = false;
+                Invoke("DestroyThis", 3);
             }
         }
         else if (other.CompareTag("Player")){
             //Codigo para hacer daño al player
         }
     }
-        
+        void DestroyThis()
+    {
+        Destroy(this.gameObject);
+    }
             
     }
 
