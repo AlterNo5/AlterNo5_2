@@ -4,54 +4,50 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Restaurador
-  - Arma
-  - Bullet
-  - MatA
-  - MatB
-  - GotaAgua
-  - Jabon
   - Plataformas
+
   - Flag
   - Checkpoint
   - Target
   - Burbuja
   - ObjetoDef
   - Pitfall
+
+  - Sword
+
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
-  - 
-  - Player
-  - Enemy
-  - Bullet
-  - 
-  - 
-  - 
+  -
+  -
+  - Obstacle
+  -
+  -
+  -
+  -
+  -
+  -
   - Boss
   - Platform
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
