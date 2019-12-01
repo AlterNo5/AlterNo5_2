@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Com.Project.Player
 {
@@ -14,7 +15,13 @@ namespace Com.Project.Player
         public Animator player_anim;
         public bool withgun = false;
         public bool playingAnim = false;
-        public Animator gun_anim;
+        Animator gun_anim;
+        public AudioSource WeaponN1;
+        public AudioSource WeaponN2;
+        public AudioSource WeaponN3;
+        public AudioSource WeaponN4;
+        public AudioSource WeaponN5;
+        AudioSource WeaponUse;
 
         // Start is called before the first frame update
         void Start()
@@ -27,7 +34,26 @@ namespace Com.Project.Player
 
             gun_anim = GetComponentInChildren<Animator>();
 
-
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                WeaponUse = WeaponN1;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                WeaponUse = WeaponN2;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                WeaponUse = WeaponN3;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                WeaponUse = WeaponN4;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 5)
+            {
+                WeaponUse = WeaponN5;
+            }
         }
 
         // Update is called once per frame
@@ -38,6 +64,8 @@ namespace Com.Project.Player
             {
                 player_anim.SetTrigger("Shoot");
                 Invoke("playAnimation", 50f * Time.deltaTime);
+                
+
             }
         }
 
@@ -74,6 +102,10 @@ namespace Com.Project.Player
             {
                 gun_anim.SetTrigger("Activate");
                 playingAnim = true;
+                if (!WeaponUse.isPlaying)
+                {
+                    WeaponUse.Play();
+                }
             }
         }
     }

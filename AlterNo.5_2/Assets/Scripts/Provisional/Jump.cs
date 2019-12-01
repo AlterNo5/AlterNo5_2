@@ -18,6 +18,9 @@ namespace Com.Project.Player
         bool rayLeft;
         bool rayRight;
 
+        public AudioSource JumpAudio;
+        
+
         PlayerInput playerInput;
         PlayerState m_playerState;
 
@@ -29,6 +32,8 @@ namespace Com.Project.Player
             playerRB = GetComponentInChildren<Rigidbody>();
             m_playerState = GetComponent<PlayerState>();
 
+            
+
         }
 
         // Update is called once per frame
@@ -36,6 +41,11 @@ namespace Com.Project.Player
         {
             if (Input.GetButtonDown("Jump") && m_playerState.enTierra)
             {
+
+                if (!JumpAudio.isPlaying)
+                {
+                    JumpAudio.Play();
+                }
                 m_playerState.doingAnimation = true;
                 anim.SetTrigger("Jump");
                 //PlayerState.enTierra = false;

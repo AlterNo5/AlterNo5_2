@@ -20,6 +20,7 @@ public class Boss1Movement : MonoBehaviour
     public bool atkStart = false;
     public bool canAttack = false;
     public bool atkEnd = false;
+    public AudioSource BossAudio;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class Boss1Movement : MonoBehaviour
     public void MoveBoss ()
     {
         transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * speed);
+        BossAudio.Play();
     }
 
     void Update()
