@@ -52,7 +52,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
 
 
-        player_transform= GetComponent<Transform>();
+        
         arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
         Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
 
