@@ -42,13 +42,6 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        
-
-
-        
-
-
-
     }
 
     //  *************  Método UpdateMatB  *********************
@@ -142,7 +135,4 @@ public class UIManager : MonoBehaviour
       
     }
 
-    
-
-    
 }
