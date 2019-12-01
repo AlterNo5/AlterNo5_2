@@ -172,6 +172,10 @@ public class PlayerCollisionDetection : MonoBehaviour
                 }
 
             }
+
+
+
+
         }
 
         PlayerPrefs.SetInt("NumDefensas", 0);

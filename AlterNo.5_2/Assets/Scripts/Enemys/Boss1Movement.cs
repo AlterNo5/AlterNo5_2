@@ -13,7 +13,7 @@ public class Boss1Movement : MonoBehaviour
     int prevSpot;
     public float speed = 1.0f;
     public float atkStartSpeed = .7f;
-    public float atkEndSpeed = 1.3f;
+    public float atkEndSpeed = 1.0f;
     public float cadencia;
     float wFRadius = 1;
     public bool moveOut = false;
