@@ -34,6 +34,7 @@ public class Boss1Movement : MonoBehaviour
                 atkStart = true;
                 atkEnd = false;
                 canAttack = true;
+                BossDeath.bossEncounter = true;
                 StartCoroutine(shoot());
                 break;
         }

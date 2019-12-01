@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollisionDetection : MonoBehaviour
 {
     public Crafteo crafteo;
-    HealthManager healthManager;
+    public HealthManager healthManager;
     UIManager _uiManager;
 
     public Transform spawnPointPersonaje_transf;
@@ -52,12 +52,12 @@ public class PlayerCollisionDetection : MonoBehaviour
 
 
         player_transform= GetComponent<Transform>();
-        arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
-        Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
-
+        
+         
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
-        crafteo = GetComponent<Crafteo>();
+        arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
+        Def_transf = GameObject.Find("ObjetoDef").GetComponent<Transform>();
 
 
     }

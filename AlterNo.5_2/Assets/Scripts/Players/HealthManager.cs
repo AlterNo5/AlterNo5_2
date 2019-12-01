@@ -136,6 +136,8 @@ public class HealthManager : MonoBehaviour
     {
         if (vidaActual <= 0)
         {
+            BossDeath.bossEncounter = false;
+            BossDeath.bossIsDeath = false;
             Invoke("LoadSceneDelay", 200f*Time.deltaTime);
         }
 
