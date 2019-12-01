@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AnimationEvents : MonoBehaviour
+public class AnimationEventsJefe2 : MonoBehaviour
 {
    public GameObject Seed;
    public Transform origin;

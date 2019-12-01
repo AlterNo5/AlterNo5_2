@@ -47,17 +47,17 @@ namespace Com.Project.Player
 
             if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Arma_Partida1") == 1)
             {
-                player_anim = GameObject.FindObjectOfType<AnimationEvents>().gameObject.GetComponent<Animator>();
+                player_anim = GameObject.FindObjectOfType<AnimationEventsPlayer>().gameObject.GetComponent<Animator>();
                 withgun = true;
             }
             else if (PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Arma_Partida2") == 1)
             {
-                player_anim = GameObject.FindObjectOfType<AnimationEvents>().gameObject.GetComponent<Animator>();
+                player_anim = GameObject.FindObjectOfType<AnimationEventsPlayer>().gameObject.GetComponent<Animator>();
                 withgun = true;
             }
             else if (PlayerPrefs.GetInt("Save3") == 1 && PlayerPrefs.GetInt("Arma_Partida3") == 1)
             {
-                player_anim = GameObject.FindObjectOfType<AnimationEvents>().gameObject.GetComponent<Animator>();
+                player_anim = GameObject.FindObjectOfType<AnimationEventsPlayer>().gameObject.GetComponent<Animator>();
                 withgun = true;
             }
 

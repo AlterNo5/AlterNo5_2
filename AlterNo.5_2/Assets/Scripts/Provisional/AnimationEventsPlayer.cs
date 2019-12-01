@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Com.Project.Player
 {
 
-    public class AnimationEvents : MonoBehaviour
+    public class AnimationEventsPlayer : MonoBehaviour
     {        
         public PlayerInput m_playerInput;
         public PlayerState m_playerState;

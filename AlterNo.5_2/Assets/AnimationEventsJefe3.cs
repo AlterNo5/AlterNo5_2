@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEvents : MonoBehaviour
+public class AnimationEventsJefe3 : MonoBehaviour
 {
     public GameObject secondForm;
     public void ChangeForm()
