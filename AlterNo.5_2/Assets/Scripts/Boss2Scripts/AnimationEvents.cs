@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimationEvents : MonoBehaviour
 {
    public GameObject Seed;
+    public GameObject Projectil;
    public Transform origin;
     private float force;
 
@@ -13,7 +14,7 @@ public class AnimationEvents : MonoBehaviour
     {
 
         force = UnityEngine.Random.Range(15f, 30f);
-        Seed=Instantiate(Seed, origin.position, origin.rotation);
-        Seed.GetComponent<Rigidbody>().AddForce((transform.forward+(transform.up*0.45f   )) * force, ForceMode.Impulse);
+        Projectil = Instantiate(Seed, origin.position, origin.rotation);
+        Projectil.GetComponent<Rigidbody>().AddForce((transform.forward+(transform.up*0.45f   )) * force, ForceMode.Impulse);
     }
 }

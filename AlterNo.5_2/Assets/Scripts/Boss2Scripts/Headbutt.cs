@@ -16,7 +16,7 @@ public class Headbutt : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             transform.parent.SendMessage("Headbutt", other.gameObject, SendMessageOptions.DontRequireReceiver);
-            other.gameObject.GetComponent<Rigidbody>().AddForce((transform.forward + (transform.up * 0.5f)) * 8f, ForceMode.Impulse);
+            other.gameObject.GetComponentInParent<Rigidbody>().AddForce((transform.forward + (transform.up * 0.5f)) * 8f, ForceMode.Impulse);
         }
     }
 
