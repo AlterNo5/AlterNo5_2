@@ -12,11 +12,18 @@ public class PlayerCollisionDetection : MonoBehaviour
     public Transform spawnPointPersonaje_transf;
     public Transform arma_transf;
 
+    //-------------------------------------------------
+
+    public AudioSource Flag;
+    public AudioSource PowerUp;
 
 
     public Transform SpawnObjDef_1;
     public Transform SpawnObjDef_2;
     public Transform Def_transf;
+
+    public GameObject GasFer;
+    public GameObject GasSpawn;
 
     private void Start()
     {
@@ -78,7 +85,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     public void CraftObjDefence()
     {
-        if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
+        if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 2)
         {
             Def_transf.SetParent(SpawnObjDef_1);
             Def_transf.SetPositionAndRotation(SpawnObjDef_1.position, Def_transf.rotation);
@@ -172,6 +179,50 @@ public class PlayerCollisionDetection : MonoBehaviour
                 }
 
             }
+            else if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Instantiate(GasFer, GasSpawn.transform.position, GasSpawn.transform.rotation);
+                if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+                {
+
+                    if (PlayerPrefs.GetInt("Index_1") == 0)
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                    }
+                    else
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                    }
+
+
+
+                }
+                else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+                {
+
+                    if (PlayerPrefs.GetInt("Index_2") == 0)
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                    }
+                    else
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                    }
+
+                }
+                else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+                {
+
+                    if (PlayerPrefs.GetInt("Index_3") == 0)
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                    }
+                    else
+                    {
+                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                    }
+                }
+            }
 
 
 
@@ -194,6 +245,12 @@ public class PlayerCollisionDetection : MonoBehaviour
         {
             healthManager.RestaurarVida();
             healthManager.UpdateLives();
+
+
+            if (!PowerUp.isPlaying)
+            {
+                PowerUp.Play();
+            }
             Destroy(other.gameObject);
 
         }
@@ -202,6 +259,12 @@ public class PlayerCollisionDetection : MonoBehaviour
         {
             crafteo.AddMatB();
             crafteo.Fabricar_Arma();
+
+
+            if (!PowerUp.isPlaying)
+            {
+                PowerUp.Play();
+            }
             Destroy(other.gameObject);
         }
 
@@ -209,6 +272,12 @@ public class PlayerCollisionDetection : MonoBehaviour
         {
             crafteo.AddMatA();
             crafteo.Fabricar_Arma();
+
+
+            if (!PowerUp.isPlaying)
+            {
+                PowerUp.Play();
+            }
 
             Destroy(other.gameObject);
 
@@ -220,6 +289,10 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Picked_Gun", 1);
             PlayerPrefs.SetInt("Arma_Guardada", 1);
 
+            if (!PowerUp.isPlaying)
+            {
+                PowerUp.Play();
+            }
         }
 
         if(other.tag == "Pitfall")
@@ -246,7 +319,8 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Arma_Guardada", 0);
             PlayerPrefs.SetInt("Picked_Gun", 0);
 
-            
+            Flag.Play();
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 

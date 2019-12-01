@@ -13,6 +13,8 @@ namespace Com.Project.Player
         public Animator anim;
         private PlayerState m_PlayerDirection;
         public GameObject m_PlayerModel;
+        
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -38,6 +40,7 @@ namespace Com.Project.Player
             if (m_PlayerDirection.doingAnimation == false)
             {
                 anim.SetFloat("MovementSpeed", Mathf.Abs(PlayerInput.horizontal));
+                
                 if (!m_PlayerDirection.enTierra && m_PlayerDirection.direction == PlayerState.lookDirection.RIGHT)
                 {                    
                     if (PlayerInput.horizontal < 0)
@@ -49,6 +52,8 @@ namespace Com.Project.Player
                         movement_amount = Mathf.Abs(PlayerInput.horizontal);
                     }
                     gameObject.transform.position = new Vector3(gameObject.transform.position.x + movement_amount * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+                    
+
                 }
                 else if (!m_PlayerDirection.enTierra && m_PlayerDirection.direction == PlayerState.lookDirection.LEFT)
                 {
@@ -61,6 +66,8 @@ namespace Com.Project.Player
                         movement_amount = Mathf.Abs(PlayerInput.horizontal) * -1f;
                     }                    
                     gameObject.transform.position = new Vector3(gameObject.transform.position.x + movement_amount * speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+                    
+
                 }
                 else
                 {

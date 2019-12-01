@@ -264,6 +264,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 760a44fa83c70284f8a04c430a0941bf
   m_Children:
+  - {fileID: 2248474444399142922}
   - {fileID: -2886380691314427723}
   - {fileID: 5364824625188839957}
   - {fileID: -5635112107901063814}
@@ -297,6 +298,8 @@ AudioMixerController:
     name: Ambiente
   - guid: 9fa802d71bedb3844abb45454beb3d81
     name: Fx
+  - guid: 8fd08369cea82dd43812889fb16ce536
+    name: Master
   - guid: 560cf5b462339dd43933d0bb0a3e4c31
     name: Musica
   m_AudioMixerGroupViews:
@@ -333,7 +336,6 @@ AudioMixerGroupController:
   m_GroupID: f1ee5ca12ef88cb40ad55f3a62b66fdb
   m_Children:
   - {fileID: -823462478522357805}
-  - {fileID: 2248474444399142922}
   - {fileID: 5906474050641223963}
   m_Volume: 8fd08369cea82dd43812889fb16ce536
   m_Pitch: 95948d9ce474ef9458167f14f6062d38
@@ -367,7 +369,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 39a4d032dfc623f4bb1165ac397bc0f4
-  m_FloatValues: {}
+  m_FloatValues:
+    9fa802d71bedb3844abb45454beb3d81: -0.08374829
+    ace1368c1c6405340b167afb4ff7673e: -3.5090396
   m_TransitionOverrides: {}
 --- !u!243 &2248474444399142922
 AudioMixerGroupController:
