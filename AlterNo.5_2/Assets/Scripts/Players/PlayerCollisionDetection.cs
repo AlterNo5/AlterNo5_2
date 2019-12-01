@@ -179,57 +179,62 @@ public class PlayerCollisionDetection : MonoBehaviour
                 }
 
             }
-            else if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
-            {
-                Instantiate(GasFer, GasSpawn.transform.position, GasSpawn.transform.rotation);
-                if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
-                {
+            
 
-                    if (PlayerPrefs.GetInt("Index_1") == 0)
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
-                    }
-                    else
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
-                    }
-
-
-
-                }
-                else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
-                {
-
-                    if (PlayerPrefs.GetInt("Index_2") == 0)
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
-                    }
-                    else
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
-                    }
-
-                }
-                else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
-                {
-
-                    if (PlayerPrefs.GetInt("Index_3") == 0)
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
-                    }
-                    else
-                    {
-                        Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
-                    }
-                }
-            }
-
-
-
+            
 
         }
+        else if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            Instantiate(GasFer, GasSpawn.transform.position, GasSpawn.transform.rotation);
+            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {
 
-        PlayerPrefs.SetInt("NumDefensas", 0);
+                if (PlayerPrefs.GetInt("Index_1") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+                if (PlayerPrefs.GetInt("Index_2") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+
+                if (PlayerPrefs.GetInt("Index_3") == 0)
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 9f);
+                }
+                else
+                {
+                    Destroy(GameObject.FindWithTag("ObjetoDef"), 4f);
+                }
+
+
+
+
+
+            }
+        }
+
+            PlayerPrefs.SetInt("NumDefensas", 0);
         _uiManager.UpdateObjetoDefensa(0);
     }
 
