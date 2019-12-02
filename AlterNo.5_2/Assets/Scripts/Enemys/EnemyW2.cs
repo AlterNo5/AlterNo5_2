@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyW2 : MonoBehaviour
 {
     public HealthManager healthManager;
+    public SphereCollider sCollider;
     Animator player_Anim;
     Animator self_Anim;
     EnemyMovementAB isMoving;
@@ -18,6 +19,8 @@ public class EnemyW2 : MonoBehaviour
         {
             self_Anim.SetBool("Moving", true);
         }
+        sCollider = GetComponent<SphereCollider>();
+
 
     }
 
@@ -39,11 +42,21 @@ public class EnemyW2 : MonoBehaviour
                 healthManager.Muerte();
             }
         }
-
-        if (other.gameObject.tag == "Bullet")
-        {
-            Destroy(this.gameObject);
-        }
-
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            self_Anim.SetBool("Death", true);
+            sCollider.enabled = false;
+            if (isMoving != null)
+            {
+                Destroy(gameObject.GetComponent<EnemyMovementAB>());
+            }
+
+            Stage.allMushroomAlive = false;
+        }
+    }
+
 }

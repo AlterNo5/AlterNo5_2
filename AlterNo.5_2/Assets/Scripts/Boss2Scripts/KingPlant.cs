@@ -40,6 +40,8 @@ public class KingPlant : MonoBehaviour
     private float m_Timer = 0;
     private float m_Count = 0;
 
+    public int HitPoints;
+
 
     // Start is called before the first frame update
     void Start()
@@ -369,5 +371,25 @@ public class KingPlant : MonoBehaviour
     }
 
     #endregion
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            m_inCombat = true;
+            m_anim.SetTrigger("Hurted");
+            HitPoints -= 1;
+            m_anim.SetInteger("Life", HitPoints);
+            BossDeath.bossEncounter = true;
+            BossDeath.bossIsDeath = false;
+
+            if(HitPoints <= 0)
+            {
+                m_inCombat = false;
+                BossDeath.bossEncounter = false;
+                BossDeath.bossIsDeath = true;
+            }
+        }
+    }
 
 }
