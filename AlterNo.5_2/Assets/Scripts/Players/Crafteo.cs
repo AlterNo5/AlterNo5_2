@@ -14,7 +14,7 @@ public class Crafteo : MonoBehaviour
     public bool mali = true;
     public int armaCreada;
  
-    UIManager _uiManager;
+    public UIManager _uiManager;
 
     // Checkpoint, Forma de guardar estados
 
@@ -27,11 +27,11 @@ public class Crafteo : MonoBehaviour
     {
     
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        if(_uiManager.nivel == 2)
-        {
-            armaCreada = 4;
-            _uiManager.textoCantidad_arma.text = "x " + armaCreada;
-        }
+        //if(_uiManager.nivel == 2)
+        //{
+        //    armaCreada = 4;
+        //    _uiManager.textoCantidad_arma.text = "x " + armaCreada;
+        //}
 
         if (PlayerPrefs.GetInt("ActivoCheckpoint") == 1)
         {
@@ -132,8 +132,7 @@ public class Crafteo : MonoBehaviour
     {
         
         if (_uiManager.nivel == 2)
-        {
-           
+        {           
            
             if (num_MatB == 0 & num_MatA == 1)
             {
@@ -148,6 +147,11 @@ public class Crafteo : MonoBehaviour
         }
                 return armaCreada;
 
+    }
+
+    public void AmmoUsed()
+    {
+        _uiManager.textoCantidad_arma.text = "x" + armaCreada;
     }
 
     //  **************  Método Fabricar objeto defensa  *************

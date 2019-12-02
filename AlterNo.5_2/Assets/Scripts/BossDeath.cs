@@ -7,8 +7,9 @@ public class BossDeath : MonoBehaviour
     public static bool bossEncounter = false;
     public static bool bossIsDeath = false;
     public Transform portalSpawn;
-    BoxCollider barrera;
+    public BoxCollider barrera;
     public GameObject portal;
+    public GameObject portalActivo;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +28,19 @@ public class BossDeath : MonoBehaviour
         if (bossEncounter && barrera != null)
         {
             barrera.enabled = true;
+            if(portalActivo != null)
+            {
+                Destroy(portalActivo.gameObject);
+            }
         }
 
         if (bossIsDeath && barrera != null)
         {
             barrera.enabled = false;
         }
-        if (bossIsDeath && portal != null)
+        if (bossIsDeath && portal != null && portalActivo == null)
         {
-            Instantiate(portal, portalSpawn);
-            Destroy(this.gameObject);
+            portalActivo = Instantiate(portal, portalSpawn);
         }
 
     }

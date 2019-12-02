@@ -8,10 +8,10 @@ public class Seed : MonoBehaviour
     {
         switch (other.tag) {
             case "Player":
-                other.gameObject.GetComponent<Rigidbody>().AddForce((transform.forward) * 0.5f, ForceMode.Impulse);
-                Destroy(other.gameObject);
+                other.gameObject.GetComponentInParent<Rigidbody>().AddForce((transform.forward) * 0.5f, ForceMode.Impulse);
+                Destroy(this.gameObject);
                 break;
-            case "Ground":
+            case "Plataformas":
                 Destroy(this.gameObject);
                 break;
         }
