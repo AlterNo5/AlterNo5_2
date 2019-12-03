@@ -244,7 +244,7 @@ public class CharacterSelect : MonoBehaviour
         }
         else
         {
-            World_Partida1.text = "__________";
+            World_Partida3.text = "__________";
             ImagenMali3.SetActive(false);
             ImagenSanjin3.SetActive(false);
             ImagenScott3.SetActive(false);
