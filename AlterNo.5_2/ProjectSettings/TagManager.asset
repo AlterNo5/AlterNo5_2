@@ -19,6 +19,7 @@ TagManager:
   - Burbuja
   - ObjetoDef
   - Pitfall
+  - Sword
   layers:
   - Default
   - TransparentFX
