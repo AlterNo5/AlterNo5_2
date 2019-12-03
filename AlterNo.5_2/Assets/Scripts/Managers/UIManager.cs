@@ -126,7 +126,6 @@ public class UIManager : MonoBehaviour
         else
         {
             objetoDefensaImage.sprite = objetoDefensa[1];
-            objeDefensa = objeDefensa + 4;
             textoCantidad_ObjDef.enabled = true;
             textoCantidad_ObjDef.text = "x" + objeDefensa;
         }

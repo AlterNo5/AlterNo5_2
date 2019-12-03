@@ -228,9 +228,9 @@ public class Crafteo : MonoBehaviour
             if (num_MatB >= 1)
             {
                 num_MatB = 0;
-                objeto_creado = objeto_creado+ 4;
+                objeto_creado = objeto_creado + 4;
                 _uiManager.UpdateMatB(num_MatB);
-                _uiManager.UpdateMatA(num_MatA);
+                _uiManager.textoCantidad_ObjDef.text = "x" + (objeto_creado-4);
             }
         }
         return objeto_creado;

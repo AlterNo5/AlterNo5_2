@@ -5,49 +5,53 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plataformas
-
   - Flag
   - Checkpoint
   - Target
   - Burbuja
   - ObjetoDef
   - Pitfall
-
   - Sword
-
+  - Restaurador
+  - Arma
+  - Bullet
+  - Enemy
+  - MatB
+  - MatA
+  - GasGrow
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - 
   - Water
   - UI
-  -
-  -
+  - 
+  - 
   - Obstacle
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Boss
   - Platform
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
