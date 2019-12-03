@@ -12038,7 +12038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603259830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.34, y: 3.37, z: -2.48}
+  m_LocalPosition: {x: -11.83, y: 11.11, z: -12.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19491,12 +19491,6 @@ GameObject:
 --- !u!4 &910551649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 477e3fd626560234e8a56bea61dd6635,
-    type: 3}
-  m_PrefabInstance: {fileID: 6989209994777377039}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &910551650 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 477e3fd626560234e8a56bea61dd6635,
     type: 3}
   m_PrefabInstance: {fileID: 6989209994777377039}
   m_PrefabAsset: {fileID: 0}
@@ -27003,7 +26997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334938884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.21, y: 6.59, z: -2.73}
+  m_LocalPosition: {x: -19.52, y: -23.8, z: -5.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43939,15 +43933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17b182273309d844ac73c9821a58a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnergyBall: {fileID: 5854917287638675693, guid: 317ea7ec31f57684a96d9d07faa36107,
-    type: 3}
-  m_anim: {fileID: 910551650}
-  agresiveForm: 0
-  speed: 5
-  inPlane: 1
-  hited: 0
-  LowLimit: {fileID: 2073662914}
-  TopLimit: {fileID: 445255227}
 --- !u!135 &6989209994048512701
 SphereCollider:
   m_ObjectHideFlags: 0
