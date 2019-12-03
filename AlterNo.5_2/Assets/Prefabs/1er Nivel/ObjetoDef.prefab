@@ -92,6 +92,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.55
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &3594710952108455026
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202658269129717480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2241278
+  m_Center: {x: 0, y: -0.004907824, z: 0}
 --- !u!1001 &212899716779405281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Burbuja_Protectora
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 43631dadfbd70df4fa3cb7e88a40d1f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 43631dadfbd70df4fa3cb7e88a40d1f3,
         type: 3}
@@ -176,6 +194,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43631dadfbd70df4fa3cb7e88a40d1f3, type: 3}
+--- !u!1 &8202658269129717480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 43631dadfbd70df4fa3cb7e88a40d1f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 212899716779405281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5156317990403392763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 43631dadfbd70df4fa3cb7e88a40d1f3,

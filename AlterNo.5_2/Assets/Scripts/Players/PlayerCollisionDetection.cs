@@ -56,12 +56,6 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Picked_Gun", 0);
         }
 
-
-
-
-
-
-
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         healthManager = GameObject.Find("Player_Lives").GetComponent<HealthManager>();
         arma_transf = GameObject.Find("Arma").GetComponent<Transform>();
@@ -85,7 +79,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     public void CraftObjDefence()
     {
-        if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 2)
+        if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
         {
             Def_transf.SetParent(SpawnObjDef_1);
             Def_transf.SetPositionAndRotation(SpawnObjDef_1.position, Def_transf.rotation);
@@ -179,9 +173,11 @@ public class PlayerCollisionDetection : MonoBehaviour
                 }
 
             }
-            else if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 1)
+            else if (PlayerPrefs.GetInt("NumDefensas") >= 1 && SceneManager.GetActiveScene().buildIndex == 2)
             {
                 Instantiate(GasFer, GasSpawn.transform.position, GasSpawn.transform.rotation);
+                GasSpawn.transform.SetParent(GasSpawn.transform);
+
                 if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
                 {
 

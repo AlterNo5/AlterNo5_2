@@ -1768,7 +1768,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.94, y: 0.48, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &191137445
 MeshFilter:
@@ -1786,7 +1786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191137442}
   m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 29.38, y: -16.04, z: -7.27}
+  m_LocalPosition: {x: 28.86, y: -15.7, z: -7.2}
   m_LocalScale: {x: 4, y: 0.54, z: 1}
   m_Children: []
   m_Father: {fileID: 1757320050}
@@ -2110,12 +2110,12 @@ PrefabInstance:
     - target: {fileID: 6854106867053823105, guid: 312987e360b4a3d4c9b32e8baa826026,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -363.2
+      value: -369.8
       objectReference: {fileID: 0}
     - target: {fileID: 6854106867053823105, guid: 312987e360b4a3d4c9b32e8baa826026,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -798.55
+      value: -794
       objectReference: {fileID: 0}
     - target: {fileID: 6854106867053823105, guid: 312987e360b4a3d4c9b32e8baa826026,
         type: 3}
@@ -4921,7 +4921,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547977284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6827,7 +6827,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -10487,8 +10487,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -11541,7 +11541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044189695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.3, y: -14.7, z: 0}
+  m_LocalPosition: {x: 109.3, y: -14.8, z: 0}
   m_LocalScale: {x: 117.93, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16388,7 +16388,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalSpawn: {fileID: 8473311784253571434}
+  barrera: {fileID: 0}
   portal: {fileID: 4458853012211043899, guid: 32c8d09ff4f51ed4bb7264f2497dc2e4, type: 3}
+  portalActivo: {fileID: 0}
 --- !u!65 &1515550172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22966,12 +22968,12 @@ PrefabInstance:
     - target: {fileID: 6924435622938567949, guid: 73abc366281342e45a3ceac550e60211,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.433044
+      value: -77.5
       objectReference: {fileID: 0}
     - target: {fileID: 6924435622938567949, guid: 73abc366281342e45a3ceac550e60211,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.26246
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6924435622938567949, guid: 73abc366281342e45a3ceac550e60211,
         type: 3}
@@ -24978,4 +24980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalSpawn: {fileID: 0}
+  barrera: {fileID: 0}
   portal: {fileID: 0}
+  portalActivo: {fileID: 0}

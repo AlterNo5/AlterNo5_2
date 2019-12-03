@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameCamara : MonoBehaviour
 {
     private Transform target;
-    private float trackSpeed = 10;
+    private float trackSpeed = 100;
 
     public void SetTarget(Transform t)
     {
@@ -18,7 +18,7 @@ public class GameCamara : MonoBehaviour
         {
             float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
             float y = IncrementTowards(transform.position.y, target.position.y +2 , trackSpeed);
-            transform.position = new Vector3(x, y, transform.position.z);
+            transform.position = new Vector3(target.position.x, target.position.y + 2, transform.position.z);
         }
     }
 
