@@ -101,6 +101,7 @@ MonoBehaviour:
     type: 3}
   smokeGrowOld: {fileID: 0}
   origin: {fileID: 3170355828084681618}
+  Mochila: {fileID: 5420691379022915920}
 --- !u!1 &8279044349924291996
 GameObject:
   m_ObjectHideFlags: 0

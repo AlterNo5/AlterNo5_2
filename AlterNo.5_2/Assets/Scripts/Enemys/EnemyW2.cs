@@ -9,6 +9,10 @@ public class EnemyW2 : MonoBehaviour
     Animator player_Anim;
     Animator self_Anim;
     EnemyMovementAB isMoving;
+    AudioSource DamagedPlayer;
+    public AudioSource MaliDaño;
+    public AudioSource ScottDaño;
+    public AudioSource SanjinDaño;
 
     private void Start()
     {
@@ -21,6 +25,58 @@ public class EnemyW2 : MonoBehaviour
         }
         sCollider = GetComponent<SphereCollider>();
 
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Index_1") == 0)
+            {
+                DamagedPlayer = MaliDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_1") == 1)
+            {
+                DamagedPlayer = SanjinDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_1") == 2)
+            {
+                DamagedPlayer = ScottDaño;
+            }
+
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Index_2") == 0)
+            {
+                DamagedPlayer = MaliDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_2") == 1)
+            {
+                DamagedPlayer = SanjinDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_2") == 2)
+            {
+                DamagedPlayer = ScottDaño;
+            }
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+        {
+
+            if (PlayerPrefs.GetInt("Index_3") == 0)
+            {
+                DamagedPlayer = MaliDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_3") == 1)
+            {
+                DamagedPlayer = SanjinDaño;
+            }
+            else if (PlayerPrefs.GetInt("Index_3") == 2)
+            {
+                DamagedPlayer = ScottDaño;
+            }
+
+        }
 
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+ 
 
 public class EnemyCollisionDetection : MonoBehaviour
 {
@@ -80,7 +81,7 @@ public class EnemyCollisionDetection : MonoBehaviour
     //  **************  Método OnTriggerEnter  ******************
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && SceneManager.GetActiveScene().buildIndex != 3)
         {
             healthManager.ReduceHealth();
             healthManager.UpdateLives();
@@ -97,6 +98,31 @@ public class EnemyCollisionDetection : MonoBehaviour
             }
             Destroy(this.gameObject);
             
+
+
+            if (healthManager.vidaActual <= 0)
+            {
+                player_Anim.SetBool("Dead", true);
+                healthManager.Muerte();
+            }
+        }
+        else if (other.tag == "Player" && SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            healthManager.ReduceHealth();
+            healthManager.UpdateLives();
+            player_Anim = other.GetComponent<Animator>();
+            player_Anim.SetTrigger("Damage");
+            if (!DamagedPlayer.isPlaying)
+            {
+                DamagedPlayer.Play();
+            }
+
+            if (!BurbujaMuerte.isPlaying)
+            {
+                BurbujaMuerte.Play();
+            }
+            
+
 
 
             if (healthManager.vidaActual <= 0)
