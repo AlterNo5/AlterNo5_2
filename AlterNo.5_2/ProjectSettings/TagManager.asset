@@ -12,6 +12,7 @@ TagManager:
   - ObjetoDef
   - Pitfall
   - Sword
+
   - Enemy
   - Restaurador
   - Arma
@@ -19,39 +20,41 @@ TagManager:
   - MatA
   - Bullet
   - Story_Intro
+  - GasGrow
+
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
+  -
+  -
   - Obstacle
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
   - Boss
   - Platform
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
