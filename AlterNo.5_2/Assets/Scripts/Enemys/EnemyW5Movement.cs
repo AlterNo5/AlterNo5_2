@@ -9,16 +9,22 @@ public class EnemyW5Movement : MonoBehaviour
     int prevSpot;
 
     public float defaultSpeed = 1.0f;
+    public float lastSpeed;
     public float chaseSpeed = 3.0f;
     float wFRadius = 1;
 
-    GameObject player;
+    public Transform Origin;
+    public GameObject Rayo;
+    public GameObject[] Blast;
 
-    public BoxCollider sightCollider;
+    public GameObject player;
 
     public bool inRange;
     public bool inSight;
     public int inChase = 0;
+
+    public Animator self_Anim;
+    public float m_turnSpeed;
 
     void Start()
     {
@@ -27,7 +33,13 @@ public class EnemyW5Movement : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
+        self_Anim = GetComponent<Animator>();
+
         prevSpot = currentSpot;
+        if(spotPoints != null && self_Anim != null)
+        {
+            self_Anim.SetBool("Walking", true);
+        }
 
     }
 
@@ -40,12 +52,12 @@ public class EnemyW5Movement : MonoBehaviour
     {
         if(inChase == 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
         }
 
         if (inChase == 0)
         {
-            if (Vector3.Distance(spotPoints[currentSpot].transform.position, transform.position) < wFRadius)
+            if (Vector3.Distance(spotPoints[currentSpot].transform.position, gameObject.transform.position) < wFRadius)
             {
                 currentSpot++;
 
@@ -53,20 +65,19 @@ public class EnemyW5Movement : MonoBehaviour
                 {
                     currentSpot = 0;
                 }
-
-                if (currentSpot == 0)
-                {
-                    sightCollider.center = new Vector3(0, 0, 5.67f);
-                }
-
-                if (currentSpot == 1)
-                {
-                    sightCollider.center = new Vector3(0, 0, -5.67f);
-                }
-
             }
             prevSpot = currentSpot;
-            transform.position = Vector3.MoveTowards(transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * defaultSpeed);
+            if (spotPoints[currentSpot].transform.position.x > transform.position.x)
+            {
+                Quaternion target = Quaternion.Euler(0, 90, 0);
+                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
+            }
+            if (spotPoints[currentSpot].transform.position.x < transform.position.x)
+            {
+                Quaternion target = Quaternion.Euler(0, 270, 0);
+                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
+            }
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * defaultSpeed);
         }               
 
         if(inRange && inSight)
@@ -79,5 +90,31 @@ public class EnemyW5Movement : MonoBehaviour
             inChase = 0;
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            lastSpeed = chaseSpeed;
+            chaseSpeed = 0;
+            self_Anim.SetBool("AttackRange", true);
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            chaseSpeed = lastSpeed;
+            lastSpeed = 0;
+            self_Anim.SetBool("AttackRange", false);
+        }
+    }
+
+    public void Attack()
+    {        
+            Instantiate(Rayo, Origin);
     }
 }

@@ -19,6 +19,8 @@ public class EnemyW5CollisionDetectionSight : MonoBehaviour
             case "Player":
                 {
                     onSight.inSight = true;
+                    onSight.self_Anim.SetTrigger("Detection");
+                    onSight.self_Anim.SetBool("DetectionRange", true);
                     break;
                 }
         }

@@ -31,6 +31,7 @@ public class EnemyW5CollisionDetectionLimit : MonoBehaviour
             case "Player":
                 {
                     onLimit.inRange = false;
+                    onLimit.self_Anim.SetBool("DetectionRange", false);
                     break;
                 }
         }

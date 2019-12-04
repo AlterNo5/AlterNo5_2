@@ -8,7 +8,7 @@ public class Boss5TargetMovement : MonoBehaviour
     public bool chasing;
     private float m_KeyframeStopChase;
     public float stopChase = .5f;
-    GameObject player;
+    public GameObject player;
 
     void Start()
     {
@@ -36,6 +36,6 @@ public class Boss5TargetMovement : MonoBehaviour
             m_KeyframeStopChase = 0;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, player.transform.position.z), speed);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), speed);
     }
 }
