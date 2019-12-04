@@ -8,14 +8,14 @@ public class MochilaPickUp : MonoBehaviour
 
     private void Start()
     {
-        
+        mochila = GameObject.FindObjectOfType<Arma2>().gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            mochila = GameObject.FindObjectOfType<Arma2>().gameObject;
+            
             mochila.GetComponent<MeshRenderer>().enabled = true;
             mochila.GetComponent<Arma2>().isEquiped = true;
             Destroy(this.gameObject);

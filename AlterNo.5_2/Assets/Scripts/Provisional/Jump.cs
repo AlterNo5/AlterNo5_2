@@ -19,10 +19,9 @@ namespace Com.Project.Player
         bool rayLeft;
         bool rayRight;
 
-        public AudioSource JumpAudio;
-        public AudioSource LandRocas, LandBurbuja, LandMetal, LandEco;
 
-        AudioSource LandAudio;
+        public AudioSource JumpAudio;
+
 
         PlayerInput playerInput;
         PlayerState m_playerState;
@@ -35,26 +34,7 @@ namespace Com.Project.Player
             playerRB = GetComponentInChildren<Rigidbody>();
             m_playerState = GetComponent<PlayerState>();
             
-            if (SceneManager.GetActiveScene().buildIndex == 1)
-            {
-                LandAudio = LandBurbuja;
-            }
-            else if (SceneManager.GetActiveScene().buildIndex == 2)
-            {
-                LandAudio = LandRocas;
-            }
-            else if (SceneManager.GetActiveScene().buildIndex == 3)
-            {
-                LandAudio = LandRocas;
-            }
-            else if (SceneManager.GetActiveScene().buildIndex == 4)
-            {
-                LandAudio = LandEco;
-            }
-            else if (SceneManager.GetActiveScene().buildIndex == 5)
-            {
-                LandAudio = LandMetal;
-            }
+            
 
 
         }
@@ -156,10 +136,10 @@ namespace Com.Project.Player
             {
                 anim.SetBool("onAir", false);
                                
+                
             } else
             {
                 anim.SetBool("onAir", true);
-                LandAudio.Play();
             }
         }
 

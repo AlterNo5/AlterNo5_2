@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Arma2 : MonoBehaviour
 {
 
-    public bool isEquiped;
+    public bool isEquiped = false;
     public bool smokeUsed = false;
     public Crafteo ammo;
     public GameObject smokeAttack;
@@ -13,17 +14,31 @@ public class Arma2 : MonoBehaviour
     public GameObject smokeGrow;
     public ParticleSystem smokeGrowOld;
     public Transform origin;
+    public GameObject Mochila;
 
     // Start is called before the first frame update
     void Start()
     {
         ammo = GameObject.FindObjectOfType<Crafteo>().gameObject.GetComponent<Crafteo>();
+        MeshRenderer Mochi = Mochila.GetComponent<MeshRenderer>();
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            Mochi.enabled = true;
+        }
+        else
+        {
+            Mochi.enabled = false;
+        }
     }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (isEquiped && Input.GetButtonDown("Fire1") && !smokeUsed && ammo.armaCreada > 0)
+
+       
+        if (isEquiped = true && Input.GetButtonDown("Fire1") && !smokeUsed && ammo.armaCreada > 0)
         {
             smokeAttackOld = Instantiate(smokeAttack, origin.transform).GetComponentInChildren<ParticleSystem>();
             smokeAttackOld.transform.localScale = new Vector3(.5f, .5f, .1f);
@@ -42,7 +57,7 @@ public class Arma2 : MonoBehaviour
             smokeUsed = false;
         }
 
-        if (isEquiped && Input.GetButtonDown("Fire2") && !smokeUsed && ammo.objeto_creado > 0)
+        if (isEquiped == true && Input.GetButtonDown("Fire2") && !smokeUsed && ammo.objeto_creado > 0)
         {
             smokeGrowOld = Instantiate(smokeGrow, origin.transform).GetComponentInChildren<ParticleSystem>();
             smokeGrowOld.transform.localScale = new Vector3(.5f, .5f, .1f);
