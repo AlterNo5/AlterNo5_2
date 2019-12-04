@@ -30,6 +30,8 @@ public class Arma2 : MonoBehaviour
         {
             Mochi.enabled = false;
         }
+
+        isEquiped = true;
     }
    
 
@@ -38,7 +40,7 @@ public class Arma2 : MonoBehaviour
     {
 
        
-        if (isEquiped = true && Input.GetButtonDown("Fire1") && !smokeUsed && ammo.armaCreada > 0)
+        if (isEquiped == true && Input.GetButtonDown("Fire1") && !smokeUsed && ammo.armaCreada > 0)
         {
             smokeAttackOld = Instantiate(smokeAttack, origin.transform).GetComponentInChildren<ParticleSystem>();
             smokeAttackOld.transform.localScale = new Vector3(.5f, .5f, .1f);

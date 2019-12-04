@@ -57,7 +57,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 0f8923cb5ba765e4796cf66ea270a580, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 0f8923cb5ba765e4796cf66ea270a580, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4755,7 +4756,7 @@ ParticleSystem:
 --- !u!199 &291332853550447561
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4790,7 +4791,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
