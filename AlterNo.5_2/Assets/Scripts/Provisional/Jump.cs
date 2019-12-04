@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Com.Project.Player
 {
@@ -19,7 +20,9 @@ namespace Com.Project.Player
         bool rayRight;
 
         public AudioSource JumpAudio;
-        
+        public AudioSource LandRocas, LandBurbuja, LandMetal, LandEco;
+
+        AudioSource LandAudio;
 
         PlayerInput playerInput;
         PlayerState m_playerState;
@@ -31,8 +34,28 @@ namespace Com.Project.Player
             playerInput = GetComponent<PlayerInput>();
             playerRB = GetComponentInChildren<Rigidbody>();
             m_playerState = GetComponent<PlayerState>();
-
             
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                LandAudio = LandBurbuja;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                LandAudio = LandRocas;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                LandAudio = LandRocas;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                LandAudio = LandEco;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 5)
+            {
+                LandAudio = LandMetal;
+            }
+
 
         }
 
@@ -132,9 +155,11 @@ namespace Com.Project.Player
             if (m_playerState.enTierra)
             {
                 anim.SetBool("onAir", false);
+                               
             } else
             {
                 anim.SetBool("onAir", true);
+                LandAudio.Play();
             }
         }
 

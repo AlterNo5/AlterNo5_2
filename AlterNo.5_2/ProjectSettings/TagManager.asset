@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plataformas
-
   - Flag
   - Checkpoint
   - Target
@@ -13,39 +12,46 @@ TagManager:
   - ObjetoDef
   - Pitfall
   - Sword
+  - Enemy
+  - Restaurador
+  - Arma
+  - MatB
+  - MatA
+  - Bullet
+  - Story_Intro
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - 
   - Water
   - UI
-  -
-  -
+  - 
+  - 
   - Obstacle
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Boss
   - Platform
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
