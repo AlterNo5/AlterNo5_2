@@ -18,7 +18,7 @@ public class FinalScenes : MonoBehaviour
         if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
         {
 
-            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida1"));
+            
 
             if (PlayerPrefs.GetInt("Index_1") == 0)
             {
@@ -38,7 +38,7 @@ public class FinalScenes : MonoBehaviour
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
         {
 
-            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida2"));
+            
             if (PlayerPrefs.GetInt("Index_2") == 0)
             {
                 MaliVineta.SetActive(true);
@@ -56,7 +56,7 @@ public class FinalScenes : MonoBehaviour
         else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
         {
 
-            PlayerPrefs.SetInt("ActivoCheckpoint", PlayerPrefs.GetInt("Checkpoint_Partida3"));
+            
             if (PlayerPrefs.GetInt("Index_3") == 0)
             {
                 MaliVineta.SetActive(true);

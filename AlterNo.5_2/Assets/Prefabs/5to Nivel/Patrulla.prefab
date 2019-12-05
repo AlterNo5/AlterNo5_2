@@ -459,7 +459,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169954703623840208}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -722,7 +722,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169954704884389905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -852,6 +852,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.23, y: 0.6, z: 0.36}
   m_Center: {x: 0, y: 0.48, z: 0}
+--- !u!114 &3000881555045153212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404120144377127943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b767194ef7e64c54d868e58eea819625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthManager: {fileID: 0}
+  "MaliDa\xF1o": {fileID: 6850218187095521178}
+  "ScottDa\xF1o": {fileID: 5771993674697521309}
+  "SanjinDa\xF1o": {fileID: 2043635299968267254}
+  BurbujaMuerte: {fileID: 0}
 --- !u!114 &4169954704885395134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,23 +896,6 @@ MonoBehaviour:
   inChase: 0
   self_Anim: {fileID: 0}
   m_turnSpeed: 5
---- !u!114 &3000881555045153212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5404120144377127943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b767194ef7e64c54d868e58eea819625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthManager: {fileID: 0}
-  "MaliDa\xF1o": {fileID: 6850218187095521178}
-  "ScottDa\xF1o": {fileID: 5771993674697521309}
-  "SanjinDa\xF1o": {fileID: 2043635299968267254}
-  BurbujaMuerte: {fileID: 0}
 --- !u!1001 &4169954704969628942
 PrefabInstance:
   m_ObjectHideFlags: 0
