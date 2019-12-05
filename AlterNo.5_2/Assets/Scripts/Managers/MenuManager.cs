@@ -47,4 +47,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
+
+    public void Instructions()
+    {
+        SceneManager.LoadScene(10, LoadSceneMode.Single);
+    }
 }

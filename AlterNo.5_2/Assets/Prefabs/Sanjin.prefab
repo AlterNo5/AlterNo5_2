@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -115}
-  m_SizeDelta: {x: 523, y: 204}
+  m_AnchoredPosition: {x: -11, y: -149.5}
+  m_SizeDelta: {x: 528.1, y: 331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8247789078343337276
 CanvasRenderer:
@@ -378,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212, y: -104}
+  m_AnchoredPosition: {x: 349.1, y: -163.3}
   m_SizeDelta: {x: 170.3, y: 146.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2394797634367730631
@@ -508,8 +508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.29, y: 4.77}
-  m_SizeDelta: {x: 309.19, y: 54.66}
+  m_AnchoredPosition: {x: -2.5, y: 5.4}
+  m_SizeDelta: {x: 402.56, y: 91.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1717500910061954810
 CanvasRenderer:
@@ -568,8 +568,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10.1
-  m_fontSizeBase: 10.1
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1433,6 +1433,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573623728964278348}
     m_Modifications:
+    - target: {fileID: 4216338975229779570, guid: ff8ae96a606b57d4dae64b0263199166,
+        type: 3}
+      propertyPath: m_Name
+      value: Pisadas_Eco
+      objectReference: {fileID: 0}
     - target: {fileID: 4216338975229779572, guid: ff8ae96a606b57d4dae64b0263199166,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1487,11 +1492,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216338975229779570, guid: ff8ae96a606b57d4dae64b0263199166,
-        type: 3}
-      propertyPath: m_Name
-      value: Pisadas_Eco
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8ae96a606b57d4dae64b0263199166, type: 3}
@@ -1765,6 +1765,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573623728964278348}
     m_Modifications:
+    - target: {fileID: 4718501624177878838, guid: 4aa09c4916300f74384ba72f51960e4e,
+        type: 3}
+      propertyPath: m_Name
+      value: Landing_Eco
+      objectReference: {fileID: 0}
     - target: {fileID: 4718501624177878836, guid: 4aa09c4916300f74384ba72f51960e4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1820,11 +1825,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4718501624177878838, guid: 4aa09c4916300f74384ba72f51960e4e,
-        type: 3}
-      propertyPath: m_Name
-      value: Landing_Eco
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa09c4916300f74384ba72f51960e4e, type: 3}
 --- !u!4 &1878098874955326644 stripped
@@ -1846,6 +1846,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573623728964278348}
     m_Modifications:
+    - target: {fileID: 3807521868596125211, guid: e49e8d303279a654f9fd65bd64dd1382,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 3807521868596125213, guid: e49e8d303279a654f9fd65bd64dd1382,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1900,11 +1905,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807521868596125211, guid: e49e8d303279a654f9fd65bd64dd1382,
-        type: 3}
-      propertyPath: m_Name
-      value: PowerUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49e8d303279a654f9fd65bd64dd1382, type: 3}
@@ -2005,13 +2005,7 @@ PrefabInstance:
     - target: {fileID: -6057140222963153312, guid: 8ab9c01a709931849a8a800bf35788b2,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed by
-        Humanoid clips.\n\tTransform 'Bip001 R Finger21'\n\tTransform 'Bip001 R Clavicle'\n\tTransform
-        'Bip001 L Finger21'\n\tTransform 'Bip001 L Forearm'\n\tTransform 'Bip001 L
-        Clavicle'\n\tTransform 'Bip001 R Forearm'\n\tTransform 'Bip001 Spine1'\n\tTransform
-        'Bip001 R Foot'\n\tTransform 'Bip001 R Finger01'\n\tTransform 'Bip001 Head'\n\tand
-        more ...\n\tFrom animation clip 'Take 001'"
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab9c01a709931849a8a800bf35788b2, type: 3}
@@ -2046,6 +2040,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573623728964278348}
     m_Modifications:
+    - target: {fileID: 7909671331636044190, guid: c89782215c94ed14c8f9a92a37746367,
+        type: 3}
+      propertyPath: m_Name
+      value: Pisadas_Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 7909671331636044188, guid: c89782215c94ed14c8f9a92a37746367,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2100,11 +2099,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909671331636044190, guid: c89782215c94ed14c8f9a92a37746367,
-        type: 3}
-      propertyPath: m_Name
-      value: Pisadas_Agua
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c89782215c94ed14c8f9a92a37746367, type: 3}
