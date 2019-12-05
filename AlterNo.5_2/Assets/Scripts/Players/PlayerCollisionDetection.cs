@@ -205,7 +205,7 @@ public class PlayerCollisionDetection : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            Dialog_Story.text = "AMIGO EN CASA: El radar no detecta nada, háblame ... ¿qué ves? ¿Qué es esto? No hay nada… simplemente está en blanco Es tan diferente a las otras dimensiones… es como si estuviera rota, destruida tal vez Espero que esto no pase a ninguna otra dimensión. Si fueron esas máquinas… debo hacer algo para impedir que esto le pase a otra dimensión, a la nuestra o a nuest@ amig@";
+            Dialog_Story.text = "AMIGO EN CASA: El radar no detecta nada, háblame... ¿qué ves? ¿Qué es esto? No hay nada... es como si estuviera rota. Si fueron esas máquinas… debo hacer algo para impedir que esto le pase a otra dimensión, a la nuestra o a nuest@ amig@";
         }
         else if (SceneManager.GetActiveScene().buildIndex == 5)
         {
@@ -314,7 +314,15 @@ public class PlayerCollisionDetection : MonoBehaviour
         if (other.tag == "Story_Intro")
         {
             Invoke("StoryBubble_Intro", 0f);
-            Invoke("NoMoreStory", 8f);
+            if (SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                Invoke("NoMoreStory", 8f);
+            }
+            else
+            {
+                Invoke("NoMoreStory", 15f);
+            }
+            
         }
 
 

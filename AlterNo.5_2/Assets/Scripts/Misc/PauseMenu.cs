@@ -14,7 +14,9 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         PauseCanvas.SetActive(false);
+
         AjusteCanvas.SetActive(false);
+
     }
     
     // Update is called once per frame
@@ -82,6 +84,6 @@ public class PauseMenu : MonoBehaviour
 
         
         Resume();
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(9, LoadSceneMode.Single);
     }
 }

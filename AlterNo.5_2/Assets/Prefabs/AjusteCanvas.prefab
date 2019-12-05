@@ -156,10 +156,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 8942040381604934702}
   m_HandleRect: {fileID: 8942040381378827526}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
+  m_MinValue: -80
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -395,10 +395,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 8942040382295386486}
   m_HandleRect: {fileID: 8942040381830490972}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
+  m_MinValue: -80
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -708,10 +708,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 8942040382743813608}
   m_HandleRect: {fileID: 8942040381726402021}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
+  m_MinValue: -80
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1469,6 +1469,7 @@ GameObject:
   - component: {fileID: 8942040382714264772}
   - component: {fileID: 8942040382714264771}
   - component: {fileID: 8942040382714264770}
+  - component: {fileID: 7811692168733026926}
   m_Layer: 5
   m_Name: AjusteCanvas
   m_TagString: Untagged
@@ -1556,6 +1557,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7811692168733026926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942040382714264769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30456102cdd5445b4dd09fdd41767c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 8942040381623644020}
+  Musica: {fileID: 8942040382013518597}
+  FX: {fileID: 8942040381382757881}
 --- !u!1 &8942040382743813623
 GameObject:
   m_ObjectHideFlags: 0

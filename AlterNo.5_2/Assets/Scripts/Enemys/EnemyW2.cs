@@ -13,6 +13,7 @@ public class EnemyW2 : MonoBehaviour
     public AudioSource MaliDaño;
     public AudioSource ScottDaño;
     public AudioSource SanjinDaño;
+    public AudioSource HongoMuerte;
 
     private void Start()
     {
@@ -92,6 +93,11 @@ public class EnemyW2 : MonoBehaviour
             player_Anim = other.gameObject.GetComponentInChildren<Animator>();
             player_Anim.SetTrigger("Damage");
 
+            if (!DamagedPlayer.isPlaying)
+            {
+                DamagedPlayer.Play();
+            }
+
             if (healthManager.vidaActual <= 0)
             {
                 player_Anim.SetBool("Dead", true);
@@ -109,6 +115,10 @@ public class EnemyW2 : MonoBehaviour
             if (isMoving != null)
             {
                 Destroy(gameObject.GetComponent<EnemyMovementAB>());
+            }
+            if (!HongoMuerte.isPlaying)
+            {
+                HongoMuerte.Play();
             }
 
             Stage.allMushroomAlive = false;

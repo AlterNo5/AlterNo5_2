@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 8942040382714264769, guid: cad07d0a1ddfb90409554ddd82124109,
         type: 3}
       propertyPath: m_Name
-      value: AjusteCanvas (1)
+      value: AjusteCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8942040381378827526, guid: cad07d0a1ddfb90409554ddd82124109,
         type: 3}
@@ -601,6 +601,21 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8942040381382757881, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040381382757881, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040381382757881, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 8942040381623644020, guid: cad07d0a1ddfb90409554ddd82124109,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -631,6 +646,21 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8942040381623644020, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040381623644020, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040381623644020, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8942040382013518597, guid: cad07d0a1ddfb90409554ddd82124109,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -660,6 +690,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040382013518597, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040382013518597, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040382013518597, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942040382013518597, guid: cad07d0a1ddfb90409554ddd82124109,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad07d0a1ddfb90409554ddd82124109, type: 3}
@@ -1140,13 +1190,13 @@ AudioSource:
   m_GameObject: {fileID: 770497269}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2886380691314427723, guid: bd2289a952618cf44b7d6b65c70a6689,
+  OutputAudioMixerGroup: {fileID: -823462478522357805, guid: bd2289a952618cf44b7d6b65c70a6689,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ed8660cc3f0e12f47a5577de599fce51, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3dfc360ee8828f468cb5e8c65bb0721, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 235.2, y: -120.2}
-  m_SizeDelta: {x: 75.5, y: 62.4}
+  m_AnchoredPosition: {x: 232.9, y: -116.3}
+  m_SizeDelta: {x: 126.3, y: 100.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &146095914453220503
 CanvasRenderer:
@@ -642,7 +642,7 @@ MonoBehaviour:
   num_MatA: 0
   arma: 0
   obj_Defensa: 0
-  mali: 1
+  mali: 0
   armaCreada: 0
   _uiManager: {fileID: 0}
 --- !u!114 &8182843074805809639
@@ -1670,6 +1670,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1655486600892375103}
     m_Modifications:
+    - target: {fileID: 4718501624177878838, guid: 4aa09c4916300f74384ba72f51960e4e,
+        type: 3}
+      propertyPath: m_Name
+      value: Landing_Eco
+      objectReference: {fileID: 0}
     - target: {fileID: 4718501624177878836, guid: 4aa09c4916300f74384ba72f51960e4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1724,11 +1729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718501624177878838, guid: 4aa09c4916300f74384ba72f51960e4e,
-        type: 3}
-      propertyPath: m_Name
-      value: Landing_Eco
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa09c4916300f74384ba72f51960e4e, type: 3}
@@ -1832,6 +1832,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1655486600892375103}
     m_Modifications:
+    - target: {fileID: 3807521868596125211, guid: e49e8d303279a654f9fd65bd64dd1382,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUp
+      objectReference: {fileID: 0}
     - target: {fileID: 3807521868596125213, guid: e49e8d303279a654f9fd65bd64dd1382,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1886,11 +1891,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807521868596125211, guid: e49e8d303279a654f9fd65bd64dd1382,
-        type: 3}
-      propertyPath: m_Name
-      value: PowerUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49e8d303279a654f9fd65bd64dd1382, type: 3}
@@ -2068,6 +2068,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1655486600892375103}
     m_Modifications:
+    - target: {fileID: 4216338975229779570, guid: ff8ae96a606b57d4dae64b0263199166,
+        type: 3}
+      propertyPath: m_Name
+      value: Pisadas_Eco
+      objectReference: {fileID: 0}
     - target: {fileID: 4216338975229779572, guid: ff8ae96a606b57d4dae64b0263199166,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2123,11 +2128,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4216338975229779570, guid: ff8ae96a606b57d4dae64b0263199166,
-        type: 3}
-      propertyPath: m_Name
-      value: Pisadas_Eco
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8ae96a606b57d4dae64b0263199166, type: 3}
 --- !u!82 &6565361880577048840 stripped
@@ -2149,6 +2149,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1655486600892375103}
     m_Modifications:
+    - target: {fileID: 7909671331636044190, guid: c89782215c94ed14c8f9a92a37746367,
+        type: 3}
+      propertyPath: m_Name
+      value: Pisadas_Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 7909671331636044188, guid: c89782215c94ed14c8f9a92a37746367,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2203,11 +2208,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909671331636044190, guid: c89782215c94ed14c8f9a92a37746367,
-        type: 3}
-      propertyPath: m_Name
-      value: Pisadas_Agua
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c89782215c94ed14c8f9a92a37746367, type: 3}
