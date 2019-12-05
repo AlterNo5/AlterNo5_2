@@ -17,6 +17,9 @@ namespace Com.Project.Player
         public GameObject SanjinVineta;
         public GameObject CanvasGeneral;
 
+        public GameObject Portal;
+        public GameObject SpawnPortal;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -104,6 +107,7 @@ namespace Com.Project.Player
                 self_Anim.SetTrigger("Damage");
                 if (healthPoints <= 0)
                 {
+                    Instantiate(Portal, SpawnPortal.transform.position, SpawnPortal.transform.rotation);
                     Destroy(this.gameObject, 5f);
                 }
                 else if(healthPoints == 5)
