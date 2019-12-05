@@ -26,8 +26,11 @@ public class EnemyW5Movement : MonoBehaviour
     public Animator self_Anim;
     public float m_turnSpeed;
 
+    public bool shoocked;
     void Start()
     {
+        shoocked = false;
+
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -50,37 +53,45 @@ public class EnemyW5Movement : MonoBehaviour
 
     void Update()
     {
-        if(inChase == 1)
+        if (!shoocked)
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
+            if (inChase == 1)
+            {
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
+            }
+
+            if (inChase == 0)
+            {
+                if (Vector3.Distance(spotPoints[currentSpot].transform.position, gameObject.transform.position) < wFRadius)
+                {
+                    currentSpot++;
+
+                    if (currentSpot >= spotPoints.Length)
+                    {
+                        currentSpot = 0;
+                    }
+                }
+                prevSpot = currentSpot;
+                if (spotPoints[currentSpot].transform.position.x > transform.position.x)
+                {
+                    Quaternion target = Quaternion.Euler(0, 90, 0);
+                    gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
+                }
+                if (spotPoints[currentSpot].transform.position.x < transform.position.x)
+                {
+                    Quaternion target = Quaternion.Euler(0, 270, 0);
+                    gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
+                }
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * defaultSpeed);
+            }
+
+        }
+        else if (shoocked)
+        {
+            Invoke("ShockRecuperation", 2);
         }
 
-        if (inChase == 0)
-        {
-            if (Vector3.Distance(spotPoints[currentSpot].transform.position, gameObject.transform.position) < wFRadius)
-            {
-                currentSpot++;
-
-                if (currentSpot >= spotPoints.Length)
-                {
-                    currentSpot = 0;
-                }
-            }
-            prevSpot = currentSpot;
-            if (spotPoints[currentSpot].transform.position.x > transform.position.x)
-            {
-                Quaternion target = Quaternion.Euler(0, 90, 0);
-                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
-            }
-            if (spotPoints[currentSpot].transform.position.x < transform.position.x)
-            {
-                Quaternion target = Quaternion.Euler(0, 270, 0);
-                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, target, m_turnSpeed * Time.deltaTime);
-            }
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, spotPoints[currentSpot].transform.position, Time.deltaTime * defaultSpeed);
-        }               
-
-        if(inRange && inSight)
+        if (inRange && inSight)
         {
             inChase = 1;
         }
@@ -116,5 +127,12 @@ public class EnemyW5Movement : MonoBehaviour
     public void Attack()
     {        
             Instantiate(Rayo, Origin);
+    }
+
+    void ShockRecuperation()
+    {
+        shoocked = false;
+        GetComponent<Movement>().enabled = true;
+
     }
 }
