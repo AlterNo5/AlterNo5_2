@@ -12,7 +12,6 @@ TagManager:
   - ObjetoDef
   - Pitfall
   - Sword
-
   - Enemy
   - Restaurador
   - Arma
@@ -21,40 +20,40 @@ TagManager:
   - Bullet
   - Story_Intro
   - GasGrow
-
+  - Patrulla
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - 
   - Water
   - UI
-  -
-  -
+  - 
+  - 
   - Obstacle
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Boss
   - Platform
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
