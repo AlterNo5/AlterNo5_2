@@ -24,6 +24,7 @@ namespace Com.Project.Player
         AudioSource WeaponUse;
         string sceneName;
         Scene m_scene;
+        
 
         // Start is called before the first frame update
         void Start()
@@ -67,18 +68,21 @@ namespace Com.Project.Player
             
             if (Input.GetButtonDown("Fire1") && withgun == true && playingAnim == false)
             {
-                if (sceneName=="Nivel_3_Fondo")
-                {
-                    
+                if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 5)
+                {                   
                     player_anim.SetTrigger("Blade");
+                    if (!WeaponUse.isPlaying)
+                    {
+                        WeaponUse.Play();
+                    }
                 }
                 else
                 {
                     player_anim.SetTrigger("Shoot");
                 }
-                
+
                 Invoke("playAnimation", 50f * Time.deltaTime);
-                
+
 
             }
         }

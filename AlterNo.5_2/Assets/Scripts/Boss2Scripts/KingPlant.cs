@@ -42,6 +42,8 @@ public class KingPlant : MonoBehaviour
 
     public int HitPoints;
 
+    public AudioSource KingHit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -382,8 +384,11 @@ public class KingPlant : MonoBehaviour
             m_anim.SetInteger("Life", HitPoints);
             BossDeath.bossEncounter = true;
             BossDeath.bossIsDeath = false;
-
-            if(HitPoints <= 0)
+            if (!KingHit.isPlaying)
+            {
+                KingHit.Play();
+            }
+            if (HitPoints <= 0)
             {
                 m_inCombat = false;
                 BossDeath.bossEncounter = false;

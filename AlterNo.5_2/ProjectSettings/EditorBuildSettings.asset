@@ -24,14 +24,14 @@ EditorBuildSettings:
     path: Assets/_Scenes/Nivel5.unity
     guid: 04170b874caa3604a997abef3713b03d
   - enabled: 1
-    path: Assets/_Scenes/CharacterSelect.unity
-    guid: 1820501e8d2178d4eb13597789dd6780
+    path: Assets/_Scenes/Final_Scene.unity
+    guid: 6c1db335ed5b32442aea36fb48dbe314
   - enabled: 1
     path: Assets/_Scenes/Story.unity
     guid: 59e0c4abfbe21284eb95e6cd542714cf
   - enabled: 1
-    path: Assets/_Scenes/Final_Scene.unity
-    guid: 6c1db335ed5b32442aea36fb48dbe314
+    path: Assets/_Scenes/CharacterSelect.unity
+    guid: 1820501e8d2178d4eb13597789dd6780
   - enabled: 1
     path: Assets/_Scenes/InterfazPrincipal.unity
     guid: 2805dffbfc25a7148959f18767f3b77e

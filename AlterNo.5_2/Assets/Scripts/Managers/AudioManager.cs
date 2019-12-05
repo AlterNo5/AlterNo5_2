@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeFXVolume(float FXLevel)
     {
-        mixer.SetFloat("FX", FXLevel);
+        mixer.SetFloat("Fx", FXLevel);
     }
     void Update()
     {

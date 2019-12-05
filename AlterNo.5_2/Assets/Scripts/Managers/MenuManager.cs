@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
 
     public void ClickPlay()
     {
-        SceneManager.LoadScene(6, LoadSceneMode.Single); // tambien se puede poner el nombre de la escena, aditivo se cargan las dos y single solo una
+        SceneManager.LoadScene(8, LoadSceneMode.Single); // tambien se puede poner el nombre de la escena, aditivo se cargan las dos y single solo una
     }
 
     public void ClickQuit()
@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
 
     public void ClickPartidas()
     {
-        SceneManager.LoadScene(6, LoadSceneMode.Single);
+        SceneManager.LoadScene(8, LoadSceneMode.Single);
     }
 
     public void ClickPausa()

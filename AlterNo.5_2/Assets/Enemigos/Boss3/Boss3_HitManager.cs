@@ -6,6 +6,15 @@ public class Boss3_HitManager : MonoBehaviour
 {
     public int life = 12;
     public BallBoss Boss;
+    public GameObject SpawnPointPortal;
+    public GameObject Portal;
+    public AudioSource BossAudio, BossHit;
+
+    void Start()
+    {
+        BossAudio.Play();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         
@@ -17,6 +26,10 @@ public class Boss3_HitManager : MonoBehaviour
             
             life -= 1;
             Debug.Log(life);
+            if (!BossHit.isPlaying)
+            {
+                BossHit.Play();
+            }
 
             Boss.m_anim.SetTrigger("Hurted");
             
@@ -39,6 +52,8 @@ public class Boss3_HitManager : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 GetComponent<SphereCollider>().isTrigger = false;
                 GetComponent<LookAt>().enabled = false;
+                Instantiate(Portal, SpawnPointPortal.transform.position, SpawnPointPortal.transform.rotation);
+
                 Invoke("DestroyThis", 3);
             }
         }
