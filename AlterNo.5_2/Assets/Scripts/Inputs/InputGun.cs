@@ -22,10 +22,15 @@ namespace Com.Project.Player
         public AudioSource WeaponN4;
         public AudioSource WeaponN5;
         AudioSource WeaponUse;
+        string sceneName;
+        Scene m_scene;
 
         // Start is called before the first frame update
         void Start()
         {
+
+            m_scene= SceneManager.GetActiveScene();
+            sceneName = m_scene.name;
             m_gun = GetComponent<Gun>();
 
             PlayerPrefs.SetInt("Arma_Partida1", 0);
@@ -59,10 +64,19 @@ namespace Com.Project.Player
         // Update is called once per frame
         void Update()
         {
-
+            
             if (Input.GetButtonDown("Fire1") && withgun == true && playingAnim == false)
             {
-                player_anim.SetTrigger("Shoot");
+                if (sceneName=="Nivel_3_Fondo")
+                {
+                    
+                    player_anim.SetTrigger("Blade");
+                }
+                else
+                {
+                    player_anim.SetTrigger("Shoot");
+                }
+                
                 Invoke("playAnimation", 50f * Time.deltaTime);
                 
 
