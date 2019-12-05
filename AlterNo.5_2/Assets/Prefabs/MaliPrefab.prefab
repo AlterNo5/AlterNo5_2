@@ -642,7 +642,7 @@ MonoBehaviour:
   num_MatA: 0
   arma: 0
   obj_Defensa: 0
-  mali: 1
+  mali: 0
   armaCreada: 0
   _uiManager: {fileID: 0}
 --- !u!114 &8182843074805809639
