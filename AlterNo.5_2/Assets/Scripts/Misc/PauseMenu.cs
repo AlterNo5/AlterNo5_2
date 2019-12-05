@@ -17,6 +17,21 @@ public class PauseMenu : MonoBehaviour
 
         AjusteCanvas.SetActive(false);
 
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            PlayerPrefs.SetInt("Partida1", SceneManager.GetActiveScene().buildIndex);
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            PlayerPrefs.SetInt("Partida2", SceneManager.GetActiveScene().buildIndex);
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+        {
+            PlayerPrefs.SetInt("Partida3", SceneManager.GetActiveScene().buildIndex);
+
+        }
     }
     
     // Update is called once per frame

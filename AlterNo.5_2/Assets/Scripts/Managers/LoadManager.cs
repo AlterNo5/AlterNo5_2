@@ -27,20 +27,20 @@ public class LoadManager : MonoBehaviour
 
         // -----------------------------------------------------------
 
-        if (PlayerPrefs.GetInt("Yaconfirmo") == 1)
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
         {
-            if (PlayerPrefs.GetInt("YaEscogio_1") == 1)
-            {
-                PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida1"));
-            }
-            else if (PlayerPrefs.GetInt("YaEscogio_2") == 1)
-            {
-                PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida2"));
-            }
-            else if (PlayerPrefs.GetInt("YaEscogio_3") == 1)
-            {
-                PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida3"));
-            }
+            PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida1"));
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+        {
+            PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida2"));
+
+        }
+        else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+        {
+            PlayerPrefs.SetInt("Escena_QueViene", PlayerPrefs.GetInt("Partida3"));
+
         }
         else
         {
