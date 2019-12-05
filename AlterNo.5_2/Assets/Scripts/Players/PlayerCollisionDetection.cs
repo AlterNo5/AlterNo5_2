@@ -345,6 +345,37 @@ public class PlayerCollisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Arma_Guardada", 0);
             PlayerPrefs.SetInt("Picked_Gun", 0);
 
+            if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+
+                PlayerPrefs.SetInt("MaterialA_Partida1", PlayerPrefs.GetInt("MaterialA_Guardado"));
+                PlayerPrefs.SetInt("MaterialB_Partida1", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida1", PlayerPrefs.GetInt("Arma_Guardada"));
+                PlayerPrefs.SetInt("Checkpoint_Partida1", PlayerPrefs.GetInt("ActivoCheckpoint"));
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Save3") == 0)
+            {
+
+
+                PlayerPrefs.SetInt("MaterialA_Partida2", PlayerPrefs.GetInt("MaterialA_Guardado"));
+                PlayerPrefs.SetInt("MaterialB_Partida2", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida2", PlayerPrefs.GetInt("Arma_Guardada"));
+                PlayerPrefs.SetInt("Checkpoint_Partida2", PlayerPrefs.GetInt("ActivoCheckpoint"));
+
+            }
+            else if (PlayerPrefs.GetInt("Save1") == 0 && PlayerPrefs.GetInt("Save2") == 0 && PlayerPrefs.GetInt("Save3") == 1)
+            {
+
+
+                PlayerPrefs.SetInt("MaterialA_Partida3", PlayerPrefs.GetInt("MaterialA_Guardado"));
+                PlayerPrefs.SetInt("MaterialB_Partida3", PlayerPrefs.GetInt("MaterialB_Guardado"));
+                PlayerPrefs.SetInt("Arma_Partida3", PlayerPrefs.GetInt("Arma_Guardada"));
+                PlayerPrefs.SetInt("Checkpoint_Partida3", PlayerPrefs.GetInt("ActivoCheckpoint"));
+
+            }
+
             Flag.Play();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

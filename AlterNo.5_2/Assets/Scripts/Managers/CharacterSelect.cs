@@ -51,6 +51,18 @@ public class CharacterSelect : MonoBehaviour
         PlayerPrefs.SetInt("Yaconfirmo", 0);
         Yaconfirmo = 0;
         
+        if (PlayerPrefs.GetInt("Partida1") == 0)
+        {
+            PlayerPrefs.SetInt("Partida1", 1);
+        }
+        else if (PlayerPrefs.GetInt("Partida2") == 0)
+        {
+            PlayerPrefs.SetInt("Partida2", 1);
+        }
+        else if (PlayerPrefs.GetInt("Partida3") == 0)
+        {
+            PlayerPrefs.SetInt("Partida3", 1);
+        }
 
     }
 
@@ -473,14 +485,14 @@ public class CharacterSelect : MonoBehaviour
         }
         else if (Partida1_Selected == false && Partida2_Selected == false && Partida3_Selected == false)
         {
-            PlayerPrefs.GetInt("PartidaSelected", 0);
+            PlayerPrefs.GetInt("PartidaSelected", 1);
         }
 
         PlayerPrefs.SetInt("CharacterSelected", index);
 
         if (PlayerPrefs.GetInt("PartidaSelected") == 0)
         {
-            PlayerPrefs.SetInt("PartidaSelected", 6);
+            PlayerPrefs.SetInt("PartidaSelected", 1);
         }
 
         Partida1_Selected = false;

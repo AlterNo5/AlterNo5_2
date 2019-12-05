@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7092,7 +7092,7 @@ MonoBehaviour:
   Character_3: {fileID: 3790621284106342283, guid: 700114d638d9fb846b05f0edf20dcd23,
     type: 3}
   SpawnPoint_1: {fileID: 1511734708}
-  CheckPoint: {fileID: 0}
+  CheckPoint: {fileID: 1655996424}
 --- !u!1001 &976547236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12017,6 +12017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOSS5_Corregido
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 28c7c855cf374c548b6e54a7660687bc,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3e9bbd2115fd77a449e58759513774b3, type: 2}
     - target: {fileID: -4216859302048453862, guid: 28c7c855cf374c548b6e54a7660687bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12072,11 +12077,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 28c7c855cf374c548b6e54a7660687bc,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3e9bbd2115fd77a449e58759513774b3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c7c855cf374c548b6e54a7660687bc, type: 3}
 --- !u!1001 &1655863926
@@ -15808,6 +15808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arma
       objectReference: {fileID: 0}
+    - target: {fileID: 9176645638175280919, guid: aed86f2fb39d4d14fab5e31871285ac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8433454281141646663, guid: aed86f2fb39d4d14fab5e31871285ac0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15864,11 +15869,6 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3491153044140829619, guid: aed86f2fb39d4d14fab5e31871285ac0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176645638175280919, guid: aed86f2fb39d4d14fab5e31871285ac0,
         type: 3}
       propertyPath: m_IsActive
       value: 1

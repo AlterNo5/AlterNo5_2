@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         {
             Spawn = CheckPoint;
         }
-        else
+        else 
         {
             Spawn = SpawnPoint_1;
         }
