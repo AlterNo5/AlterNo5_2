@@ -76,7 +76,31 @@ public class PlayerCollisionDetection : MonoBehaviour
             arma_transf.SetPositionAndRotation(spawnPointPersonaje_transf.position, spawnPointPersonaje_transf.rotation);
 
         }
+        if (PlayerPrefs.GetInt("Save1") == 1 && PlayerPrefs.GetInt("Arma_Partida1") == 1)
+        {
 
+            PlayerPrefs.SetInt("Picked_Gun", 1);
+
+
+        }
+        else if (PlayerPrefs.GetInt("Save2") == 1 && PlayerPrefs.GetInt("Arma_Partida2") == 1)
+        {
+
+            PlayerPrefs.SetInt("Picked_Gun", 1);
+
+
+        }
+        else if (PlayerPrefs.GetInt("Save3") == 1 && PlayerPrefs.GetInt("Arma_Partida3") == 1)
+        {
+
+            PlayerPrefs.SetInt("Picked_Gun", 1);
+
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Picked_Gun", 0);
+        }
 
     }
 
